@@ -9,7 +9,7 @@ const Hero = () => {
     "ingeniería eléctrica",
     "automatización PLC",
     "redes y datos",
-    "suministro industrial"
+    "suministro"
   ];
 
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -18,7 +18,7 @@ const Hero = () => {
 
   useEffect(() => {
     const word = words[currentWordIndex];
-    
+
     const timeout = setTimeout(() => {
       if (!isDeleting) {
         setCurrentText(word.substring(0, currentText.length + 1));
@@ -56,18 +56,21 @@ const Hero = () => {
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
 
-            
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-6 min-h-[140px] md:min-h-[160px]">
-              Soluciones en <br className="hidden md:block"/>
+
+            <h1
+              className="text-5xl md:text-7xl font-black text-white leading-tight mb-6 min-h-[140px] md:min-h-[160px]"
+              style={{ fontFamily: "'Source Sans Pro', sans-serif" }}
+            >
+              Soluciones en <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-100">
                 {currentText}
               </span>
               <span className="animate-pulse text-blue-300">|</span>
-              <br/> industrial.
+              <br /> industrial.
             </h1>
           </motion.div>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
@@ -76,7 +79,7 @@ const Hero = () => {
             Aseguramos la eficiencia y continuidad operativa para empresas líderes mediante innovación y ética incansable.
           </motion.p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
