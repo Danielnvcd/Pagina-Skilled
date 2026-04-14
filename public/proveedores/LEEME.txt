@@ -1,0 +1,19 @@
+En esta carpeta debes colocar los logotipos individuales de cada proveedor.
+Ten en cuenta que Vite servirá esta carpeta de manera pública, por lo que las imágenes se referenciarán desde el código como `/proveedores/nombre.png`.
+
+Asegúrate de que las imágenes tengan formato `.png` (preferiblemente con fondo transparente) y de nombrarlas exactamente así:
+
+- actassi.png
+- ab.png
+- phoenix.png
+- abb.png
+- ascable.png
+- siemens.png
+- eaton.png
+- jupiter.png
+- orion.png
+- helukabel.png
+- weidmuller.png
+- lapp.png
+- charofil.png
+- viakon.png
