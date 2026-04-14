@@ -35,32 +35,38 @@ export const data = {
     {
       id: "SIE",
       name: "SIE Infraestructura Eléctrica",
-      description: "Contamos con personal altamente calificado, comprometido con las necesidades de nuestros clientes, brindando servicios eléctricos especializados y soluciones integrales conforme a estándares y normativas vigentes (Personal Calificado, Normativas Vigentes, Soluciones Integrales)."
+      description: "Contamos con personal altamente calificado, comprometido con las necesidades de nuestros clientes, brindando servicios eléctricos especializados y soluciones integrales conforme a estándares y normativas vigentes (Personal Calificado, Normativas Vigentes, Soluciones Integrales).",
+      image: "/servicios/infraestructura.jpg"
     },
     {
       id: "IPS",
       name: "IPS Integración de Proyectos y Servicios",
-      description: "Proyectos 'Llave en Mano' donde se integran diversos componentes (mecánicos, eléctricos, hidráulicos, neumáticos, etc.) para brindar soluciones completas a las necesidades de nuestros clientes. El ciclo abarca: IDEA, DISEÑO, FABRICACIÓN, TESTING, PUESTA EN MARCHA y ENTREGA & MANTENIMIENTO."
+      description: "Proyectos 'Llave en Mano' donde se integran diversos componentes (mecánicos, eléctricos, hidráulicos, neumáticos, etc.) para brindar soluciones completas a las necesidades de nuestros clientes. El ciclo abarca: IDEA, DISEÑO, FABRICACIÓN, TESTING, PUESTA EN MARCHA y ENTREGA & MANTENIMIENTO.",
+      image: "/servicios/integracion.jpg"
     },
     {
       id: "SIE_ING",
       name: "SIE Ingeniería Eléctrica",
-      description: "Media y baja tensión, iluminación industrial, puesta a tierra y tableros de fuerza y control (armado y fabricación a medida)."
+      description: "Media y baja tensión, iluminación industrial, puesta a tierra y tableros de fuerza y control (armado y fabricación a medida).",
+      image: "/servicios/ingenieria.jpg"
     },
     {
       id: "SISH",
       name: "SISH Ingeniería SW/HW",
-      description: "Elaboración de diagramas eléctricos en AutoCAD/ePLAN y programación PLC. Desarrollo e implementación en plataformas Siemens y Allen-Bradley."
+      description: "Elaboración de diagramas eléctricos en AutoCAD/ePLAN y programación PLC. Desarrollo e implementación en plataformas Siemens y Allen-Bradley.",
+      image: "/servicios/software-hardware.jpg"
     },
     {
       id: "RVD",
       name: "RVD Redes, Voz y Datos",
-      description: "Diseño e instalación de sistemas de redes para comunicación entre dispositivos productivos. Incluye Diseño de Red, Instalación (cableado estructurado, fibra óptica, ethernet, inalámbrico) e Integración (Conexión de dispositivos, sensores, PLCs y SCADA)."
+      description: "Diseño e instalación de sistemas de redes para comunicación entre dispositivos productivos. Incluye Diseño de Red, Instalación (cableado estructurado, fibra óptica, ethernet, inalámbrico) e Integración (Conexión de dispositivos, sensores, PLCs y SCADA).",
+      image: "/servicios/redes.jpg"
     },
     {
       id: "SMG",
       name: "SMG Suministro de Materiales en General",
       description: "Suministramos materiales, equipos, refacciones e insumos de marcas líderes del sector industrial.",
+      image: "/servicios/suministro.jpg",
       brands: [
         "Allen-Bradley", 
         "Rittal", 

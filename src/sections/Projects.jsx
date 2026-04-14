@@ -2,7 +2,18 @@ import { motion } from 'framer-motion';
 import { data } from '../data/content';
 import SectionTitle from '../components/SectionTitle';
 import Card from '../components/Card';
-import { Briefcase, Calendar, Users, MapPin } from 'lucide-react';
+import { Briefcase, Calendar, Users, MapPin, Zap, Network, ShieldCheck, Wrench, Brush, Cpu, Factory } from 'lucide-react';
+
+const getProjectIcon = (description, client) => {
+  const text = (description + " " + client).toLowerCase();
+  if (text.includes('eléctrica') || text.includes('tablero') || text.includes('ccm')) return Zap;
+  if (text.includes('red') || text.includes('network') || text.includes('cctv') || text.includes('fibra')) return Network;
+  if (text.includes('robot') || text.includes('plc')) return Cpu;
+  if (text.includes('safety')) return ShieldCheck;
+  if (text.includes('pintura') || text.includes('cabina')) return Brush;
+  if (text.includes('mecánico') || text.includes('neumático') || text.includes('instalación') || text.includes('retrofit')) return Wrench;
+  return Factory;
+};
 
 const Projects = () => {
   const iconsMap = [Calendar, Briefcase, Users, MapPin];
@@ -94,7 +105,9 @@ const Projects = () => {
                 
                 {/* Contenedor de proyectos por año */}
                 <div className="max-w-4xl mx-auto ml-10 md:ml-auto md:border-l-0 border-l-4 border-blue-100 pl-8 md:pl-0 py-2 space-y-6">
-                  {projects.map((item, index) => (
+                  {projects.map((item, index) => {
+                    const ProjectIcon = getProjectIcon(item.description, item.clientLocation);
+                    return (
                     <motion.div 
                       key={index}
                       initial={{ opacity: 0, y: 20 }}
@@ -108,8 +121,8 @@ const Projects = () => {
                       
                       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-3">
                         <div className="flex items-center gap-3">
-                          <div className="h-10 w-10 bg-blue-50 rounded-xl flex items-center justify-center text-primary-blue flex-shrink-0">
-                            <Briefcase size={20} />
+                          <div className="h-10 w-10 bg-blue-50 rounded-xl flex items-center justify-center text-primary-blue flex-shrink-0 group-hover:bg-primary-blue group-hover:text-white transition-colors">
+                            <ProjectIcon size={20} />
                           </div>
                           <h4 className="text-lg font-bold text-slate-800 leading-snug">{item.clientLocation}</h4>
                         </div>
@@ -121,13 +134,13 @@ const Projects = () => {
                         {item.description}
                       </p>
                     </motion.div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             ))}
           </div>
         </div>
-
 
       </div>
     </section>

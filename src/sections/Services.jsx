@@ -44,29 +44,51 @@ const Services = () => {
               <motion.div 
                 key={index} 
                 variants={item}
-                whileHover={{ y: -8, boxShadow: "0 10px 25px rgba(0,0,0,0.2)" }}
+                whileHover={{ y: -8, boxShadow: "0 10px 25px rgba(0,0,0,0.4)" }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="h-full bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-2xl group hover:bg-white/20 transition-colors text-white flex flex-col"
+                className="h-full bg-[#071c35] border border-blue-900 rounded-2xl group overflow-hidden text-white flex flex-col"
               >
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="p-3 bg-accent-red/20 text-accent-red rounded-lg group-hover:bg-accent-red group-hover:text-white transition-colors">
-                      <Icon size={28} />
+                  {/* Photo Thumbnail */}
+                  <div className="h-48 relative overflow-hidden bg-blue-950">
+                    <img 
+                      src={service.image} 
+                      alt={service.name} 
+                      className="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                      onError={(e) => { 
+                        e.target.style.display = 'none'; 
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div style={{display: 'none'}} className="absolute inset-0 items-center justify-center bg-blue-900 text-blue-800 font-bold text-sm">
+                      Falta agregar la foto: {service.image.split('/').pop()}
                     </div>
-                    <span className="text-5xl font-black opacity-10 group-hover:opacity-30 transition-opacity">0{index + 1}</span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#071c35] to-transparent opacity-90"></div>
+                    <div className="absolute top-4 right-4 text-6xl font-black text-white/5 group-hover:text-accent-red/20 transition-colors pointer-events-none">
+                      0{index + 1}
+                    </div>
                   </div>
-                  
-                  <h3 className="text-xl font-bold mb-3">{service.name}</h3>
-                  <p className="text-blue-100 text-sm leading-relaxed mb-4 flex-grow">
-                    {service.description}
-                  </p>
-                  
-                  {service.brands && (
-                    <div className="mt-auto pt-4 border-t border-white/10 flex flex-wrap gap-2">
-                       {service.brands.map((brand, bidx) => (
-                          <span key={bidx} className="text-xs font-semibold px-2 py-1 bg-white/10 rounded">{brand}</span>
-                       ))}
+
+                  {/* Content */}
+                  <div className="p-6 md:p-8 flex flex-col flex-grow">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-2 bg-accent-red/20 text-accent-red rounded-lg group-hover:bg-accent-red group-hover:text-white transition-colors">
+                        <Icon size={24} />
+                      </div>
+                      <h3 className="text-lg md:text-xl font-bold leading-tight flex-1">{service.name}</h3>
                     </div>
-                  )}
+                    
+                    <p className="text-blue-200/80 text-sm leading-relaxed mb-4 flex-grow group-hover:text-blue-100 transition-colors">
+                      {service.description}
+                    </p>
+                    
+                    {service.brands && (
+                      <div className="mt-auto pt-4 border-t border-white/10 flex flex-wrap gap-2">
+                         {service.brands.map((brand, bidx) => (
+                            <span key={bidx} className="text-xs font-semibold px-2 py-1 bg-white/10 rounded">{brand}</span>
+                         ))}
+                      </div>
+                    )}
+                  </div>
               </motion.div>
             );
           })}
