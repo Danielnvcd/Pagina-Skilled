@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { data } from '../data/content';
 import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram } from 'lucide-react';
 import logoImg from '../assets/images/logo.png';
+import PrivacyModal from './PrivacyModal';
 
 const Footer = () => {
+  const [privacyOpen, setPrivacyOpen] = useState(false);
   return (
     <motion.footer 
       initial={{ opacity: 0, y: 30 }}
@@ -89,11 +92,22 @@ const Footer = () => {
 
         </div>
 
-        <div className="border-t border-blue-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-blue-400">
+        <div className="border-t border-blue-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-blue-400 gap-2">
           <p>&copy; {new Date().getFullYear()} Skilled Proyectos Industriales. Todos los derechos reservados.</p>
-          <p className="mt-2 md:mt-0">Diseñado con React & Tailwind</p>
+          <div className="flex items-center gap-4 mt-2 md:mt-0">
+            <button
+              onClick={() => setPrivacyOpen(true)}
+              className="hover:text-white transition-colors underline underline-offset-2"
+            >
+              Aviso de Privacidad
+            </button>
+            <span className="text-blue-700">|</span>
+            <p>Diseñado con React & Tailwind</p>
+          </div>
         </div>
       </div>
+
+      <PrivacyModal open={privacyOpen} onClose={() => setPrivacyOpen(false)} />
     </motion.footer>
   );
 };

@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { data } from '../data/content';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
 import Card from '../components/Card';
+import PrivacyModal from '../components/PrivacyModal';
 
 const Contact = () => {
+  const [privacyOpen, setPrivacyOpen] = useState(false);
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,6 +66,12 @@ const Contact = () => {
                   <label htmlFor="message" className="sr-only">Mensaje</label>
                   <textarea id="message" rows="4" placeholder="Detalles de su requerimiento..." className="w-full px-4 py-3 border border-neutral-light rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-red transition-all resize-none"></textarea>
                 </div>
+                <p className="text-xs text-gray-400 text-center">
+                  Al enviar acepta nuestro{' '}
+                  <button onClick={() => setPrivacyOpen(true)} className="underline hover:text-primary-blue transition-colors">
+                    Aviso de Privacidad
+                  </button>
+                </p>
                 <Button variant="primary" className="w-full">
                   Solicitar Asesoría
                 </Button>
@@ -72,6 +81,7 @@ const Contact = () => {
 
         </div>
       </div>
+      <PrivacyModal open={privacyOpen} onClose={() => setPrivacyOpen(false)} />
     </section>
   );
 };
