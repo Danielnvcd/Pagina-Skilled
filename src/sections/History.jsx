@@ -4,6 +4,7 @@ import SectionTitle from '../components/SectionTitle';
 import Card from '../components/Card';
 import * as Icons from 'lucide-react';
 import equipoImg from '../assets/images/equipo.jpg';
+import CircuitBg from '../components/CircuitBg';
 
 const History = () => {
   const containerVariants = {
@@ -20,8 +21,9 @@ const History = () => {
   };
 
   return (
-    <section id="historia" className="py-24 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="historia" className="py-24 bg-white relative overflow-hidden">
+      <CircuitBg />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionTitle title="Nuestra Historia y ADN" subtitle="Fundación y Propósito" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">

@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 import SectionTitle from '../components/SectionTitle';
 import { data } from '../data/content';
+import CircuitBg from '../components/CircuitBg';
 
 const Brands = () => {
   return (
-    <section className="py-20 bg-white border-b border-t border-neutral-light overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="py-20 bg-white border-b border-t border-neutral-light overflow-hidden relative">
+      <CircuitBg />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <SectionTitle title="Nuestros Proveedores" subtitle="Calidad Garantizada" centered={true} />
         
         <p className="text-gray-600 mb-12 max-w-3xl mx-auto text-lg leading-relaxed">
