@@ -133,10 +133,11 @@ const Projects = () => {
                     return (
                     <motion.div
                       key={index}
-                      initial={{ opacity: 0, y: 12 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
                       viewport={{ once: true, amount: 0.05 }}
-                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{ duration: 0.5, ease: 'easeOut' }}
+                      style={{ willChange: 'opacity' }}
                       className="relative bg-white p-6 md:p-8 rounded-2xl shadow border border-neutral-light hover:border-blue-300 hover:shadow-lg transition-colors group"
                     >
                       {/* Timeline dot (Mobile: a la izquierda, Desktop: oculto o decorativo) */}

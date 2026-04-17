@@ -15,8 +15,8 @@ const History = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } }
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { duration: 0.5, ease: 'easeOut' } }
   };
 
   return (
@@ -83,11 +83,12 @@ const History = () => {
 
         <div>
           <SectionTitle title="Nuestros Valores" subtitle="Pilares Operativos" centered={true} />
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
+            style={{ willChange: 'opacity' }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6"
           >
             {data.companyInfo.values.map((valor, index) => {
