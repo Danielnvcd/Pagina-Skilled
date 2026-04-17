@@ -76,7 +76,7 @@ const Hero = () => {
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
             className="text-xl text-blue-50 mb-10 max-w-2xl leading-relaxed"
           >
-            Aseguramos la eficiencia y continuidad operativa para empresas líderes mediante innovación y ética incansable.
+            Ayudamos a plantas industriales a operar con más seguridad, eficiencia y rentabilidad mediante ingeniería eléctrica, PLC y redes.
           </motion.p>
 
           <motion.div
