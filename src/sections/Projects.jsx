@@ -137,7 +137,7 @@ const Projects = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.05 }}
                       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                      className="relative bg-white p-6 md:p-8 rounded-2xl shadow border border-neutral-light hover:border-blue-300 hover:shadow-lg transition-all group"
+                      className="relative bg-white p-6 md:p-8 rounded-2xl shadow border border-neutral-light hover:border-blue-300 hover:shadow-lg transition-colors group"
                     >
                       {/* Timeline dot (Mobile: a la izquierda, Desktop: oculto o decorativo) */}
                       <div className="absolute -left-[42px] top-8 w-4 h-4 bg-white border-4 border-accent-red rounded-full md:hidden"></div>
