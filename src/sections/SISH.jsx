@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import SectionTitle from '../components/SectionTitle';
+import SnakeBorder from '../components/SnakeBorder';
 
 const logoContainer = {
   hidden: { opacity: 0 },
@@ -25,8 +26,9 @@ const SISH = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="bg-primary-blue rounded-2xl p-8 text-white"
+            className="relative bg-primary-blue rounded-2xl p-8 text-white"
           >
+            <SnakeBorder color="#EA0029" duration={6} snakeSize={90} delay={0} />
             <h3 className="text-xl font-bold mb-3">Desarrollo de Diagramas Eléctricos</h3>
             <p className="text-blue-200 text-sm leading-relaxed mb-8">
               Elaboración de diagramas eléctricos profesionales en plataformas líderes de la industria:
@@ -77,8 +79,9 @@ const SISH = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-            className="bg-neutral-gray rounded-2xl p-8 border border-neutral-light"
+            className="relative bg-neutral-gray rounded-2xl p-8 border border-neutral-light"
           >
+            <SnakeBorder color="#00416B" duration={6} snakeSize={90} delay={-3} />
             <h3 className="text-xl font-bold text-slate-800 mb-3">Programación PLC</h3>
             <p className="text-gray-600 text-sm leading-relaxed mb-8">
               Desarrollo e implementación de programas para controladores lógicos programables en plataformas:
