@@ -95,7 +95,7 @@ const History = () => {
               const Icon = staticIcons[index % staticIcons.length];
               return (
                 <motion.div key={index} variants={itemVariants}>
-                  <Card hoverEffect={true} className="h-full p-6 text-center border-t-4 border-t-transparent hover:border-t-accent-red transition-all group">
+                  <Card hoverEffect={true} animated={false} className="h-full p-6 text-center border-t-4 border-t-transparent hover:border-t-accent-red transition-all group">
                     <div className="mx-auto h-16 w-16 mb-6 rounded-full bg-blue-50 group-hover:bg-accent-red flex items-center justify-center transition-colors">
                       <Icon className="h-8 w-8 text-primary-blue group-hover:text-white transition-colors" />
                     </div>

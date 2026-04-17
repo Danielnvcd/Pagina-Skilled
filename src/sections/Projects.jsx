@@ -50,7 +50,7 @@ const Projects = () => {
           {metricsArray.map((metric, index) => {
             const Icon = iconsMap[index % iconsMap.length];
             return (
-              <Card key={index} className="p-8 text-center" hoverEffect={false} delay={index * 0.1}>
+              <Card key={index} className="p-8 text-center" hoverEffect={false}>
                 <div className="flex justify-center mb-4 text-primary-blue">
                   <Icon size={40} opacity={0.2} />
                 </div>
@@ -131,12 +131,12 @@ const Projects = () => {
                   {projects.map((item, index) => {
                     const ProjectIcon = getProjectIcon(item.description, item.clientLocation);
                     return (
-                    <motion.div 
+                    <motion.div
                       key={index}
-                      initial={{ opacity: 0, y: 5 }}
+                      initial={{ opacity: 0, y: 12 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.2 }}
-                      transition={{ duration: 0.8, ease: "easeOut", delay: (index % 5) * 0.15 }}
+                      viewport={{ once: true, amount: 0.05 }}
+                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                       className="relative bg-white p-6 md:p-8 rounded-2xl shadow border border-neutral-light hover:border-blue-300 hover:shadow-lg transition-all group"
                     >
                       {/* Timeline dot (Mobile: a la izquierda, Desktop: oculto o decorativo) */}
