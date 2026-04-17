@@ -1,10 +1,20 @@
 import { motion } from 'framer-motion';
 import SectionTitle from '../components/SectionTitle';
 
+const logoContainer = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
+};
+const logoItem = {
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } },
+};
+
 const SISH = () => {
   return (
     <section id="sish" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionTitle title="SISH — Ingeniería Software & Hardware" subtitle="Automatización y Control" centered={false} />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -21,9 +31,15 @@ const SISH = () => {
             <p className="text-blue-200 text-sm leading-relaxed mb-8">
               Elaboración de diagramas eléctricos profesionales en plataformas líderes de la industria:
             </p>
-            <div className="flex items-center justify-center gap-6">
+            <motion.div
+              variants={logoContainer}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.4 }}
+              className="flex items-center justify-center gap-6"
+            >
               {/* AutoCAD */}
-              <div className="bg-white rounded-xl p-4 flex items-center justify-center w-36 h-24 shadow-lg">
+              <motion.div variants={logoItem} className="bg-white rounded-xl p-4 flex items-center justify-center w-36 h-24 shadow-lg">
                 <img
                   src="/proveedores/autocad.png"
                   alt="AutoCAD"
@@ -36,9 +52,9 @@ const SISH = () => {
                 <div style={{ display: 'none' }} className="h-full w-full items-center justify-center">
                   <span className="text-primary-blue font-black text-xl">AutoCAD</span>
                 </div>
-              </div>
+              </motion.div>
               {/* ePLAN */}
-              <div className="bg-white rounded-xl p-4 flex items-center justify-center w-36 h-24 shadow-lg">
+              <motion.div variants={logoItem} className="bg-white rounded-xl p-4 flex items-center justify-center w-36 h-24 shadow-lg">
                 <img
                   src="/proveedores/eplan.png"
                   alt="ePLAN"
@@ -51,8 +67,8 @@ const SISH = () => {
                 <div style={{ display: 'none' }} className="h-full w-full items-center justify-center">
                   <span className="text-primary-blue font-black text-xl">ePLAN</span>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </motion.div>
 
           {/* Bloque 2: Programación PLC */}
@@ -67,24 +83,30 @@ const SISH = () => {
             <p className="text-gray-600 text-sm leading-relaxed mb-8">
               Desarrollo e implementación de programas para controladores lógicos programables en plataformas:
             </p>
-            <div className="flex items-center justify-center gap-6">
+            <motion.div
+              variants={logoContainer}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.4 }}
+              className="flex items-center justify-center gap-6"
+            >
               {/* Allen-Bradley */}
-              <div className="bg-white rounded-xl p-4 flex items-center justify-center w-36 h-24 shadow border border-neutral-light">
+              <motion.div variants={logoItem} className="bg-white rounded-xl p-4 flex items-center justify-center w-36 h-24 shadow border border-neutral-light">
                 <img
                   src="/proveedores/ab.png"
                   alt="Allen-Bradley"
                   className="max-h-16 max-w-full object-contain"
                 />
-              </div>
+              </motion.div>
               {/* Siemens */}
-              <div className="bg-white rounded-xl p-4 flex items-center justify-center w-36 h-24 shadow border border-neutral-light">
+              <motion.div variants={logoItem} className="bg-white rounded-xl p-4 flex items-center justify-center w-36 h-24 shadow border border-neutral-light">
                 <img
                   src="/proveedores/siemens.png"
                   alt="Siemens"
                   className="max-h-16 max-w-full object-contain"
                 />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
             <p className="text-sm text-gray-500 mt-6 text-center">
               <strong className="text-slate-700">Siemens</strong> y <strong className="text-slate-700">Allen-Bradley</strong> — las plataformas de automatización más utilizadas en la industria automotriz.
             </p>

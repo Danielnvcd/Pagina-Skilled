@@ -45,6 +45,7 @@ const Hero = () => {
         {/* Overlays industriales oscuros para que el texto resalte */}
         <div className="absolute inset-0 bg-primary-blue bg-opacity-70 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-neutral-900 bg-opacity-60"></div>
+
         <div className="absolute top-0 right-0 w-2/3 h-full bg-primary-blue clip-path-slant opacity-20 drop-shadow-2xl"></div>
       </div>
 

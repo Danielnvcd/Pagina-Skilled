@@ -23,11 +23,23 @@ const Services = () => {
       <div className="absolute inset-0 bg-black/10"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-16"
+        >
           <span className="text-accent-red font-bold uppercase tracking-wider text-sm mb-2 block">Nuestra Oferta</span>
           <h2 className="text-3xl md:text-5xl font-black text-white">Portafolio de Servicios</h2>
-          <div className="h-1 w-20 bg-accent-red mt-4"></div>
-        </div>
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: '5rem' }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+            className="h-1 bg-accent-red mt-4"
+          />
+        </motion.div>
 
         <motion.div 
           variants={container}

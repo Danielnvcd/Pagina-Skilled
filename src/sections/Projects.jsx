@@ -1,8 +1,29 @@
-import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { motion, useInView, animate } from 'framer-motion';
 import { data } from '../data/content';
 import SectionTitle from '../components/SectionTitle';
 import Card from '../components/Card';
 import { Briefcase, Calendar, Users, MapPin, Zap, Network, ShieldCheck, Wrench, Brush, Cpu, Factory } from 'lucide-react';
+
+const StatCounter = ({ value }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const num = parseInt(String(value), 10);
+  const suffix = String(value).replace(String(num), '');
+  const [display, setDisplay] = useState('0' + suffix);
+
+  useEffect(() => {
+    if (!isInView) return;
+    const controls = animate(0, num, {
+      duration: 1.8,
+      ease: [0.22, 1, 0.36, 1],
+      onUpdate: (v) => setDisplay(String(Math.round(v)) + suffix),
+    });
+    return controls.stop;
+  }, [isInView, num, suffix]);
+
+  return <span ref={ref}>{display}</span>;
+};
 
 const getProjectIcon = (description, client) => {
   const text = (description + " " + client).toLowerCase();
@@ -33,16 +54,15 @@ const Projects = () => {
                 <div className="flex justify-center mb-4 text-primary-blue">
                   <Icon size={40} opacity={0.2} />
                 </div>
-                <div className="text-5xl font-black text-primary-blue mb-2">
-                  <motion.span
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    {metric.value}
-                  </motion.span>
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  className="text-5xl font-black text-primary-blue mb-2"
+                >
+                  <StatCounter value={metric.value} />
+                </motion.div>
                 <div className="text-sm font-bold uppercase tracking-wider text-gray-500">{metric.label}</div>
               </Card>
             );
@@ -113,10 +133,10 @@ const Projects = () => {
                     return (
                     <motion.div 
                       key={index}
-                      initial={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 5 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.3 }}
-                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1], delay: (index % 5) * 0.1 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition={{ duration: 0.8, ease: "easeOut", delay: (index % 5) * 0.15 }}
                       className="relative bg-white p-6 md:p-8 rounded-2xl shadow border border-neutral-light hover:border-blue-300 hover:shadow-lg transition-all group"
                     >
                       {/* Timeline dot (Mobile: a la izquierda, Desktop: oculto o decorativo) */}

@@ -44,14 +44,15 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-8 items-center">
           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
+            <a
+              key={link.name}
               href={link.href}
-              className={`text-sm font-bold transition-colors hover:text-accent-red ${
+              className={`relative text-sm font-bold transition-colors hover:text-accent-red group ${
                 scrolled ? 'text-primary-blue' : 'text-primary-blue drop-shadow-sm'
               }`}
             >
               {link.name}
+              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-accent-red transition-all duration-300 group-hover:w-full rounded-full" />
             </a>
           ))}
           {/* Social Icons Desktop */}

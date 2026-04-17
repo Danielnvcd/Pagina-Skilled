@@ -17,7 +17,13 @@ const SectionTitle = ({ title, subtitle, centered = true }) => {
       <h2 className="text-3xl md:text-5xl font-black text-primary-blue">
         {title}
       </h2>
-      <div className={`h-1 w-20 bg-accent-red mt-4 ${centered ? 'mx-auto' : ''}`}></div>
+      <motion.div
+        initial={{ width: 0 }}
+        whileInView={{ width: '5rem' }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+        className={`h-1 bg-accent-red mt-4 ${centered ? 'mx-auto' : ''}`}
+      />
     </motion.div>
   );
 };
