@@ -49,7 +49,7 @@ const PrivacyModal = ({ open, onClose }) => {
 
               <p>
                 <strong className="text-slate-800">Skilled Proyectos Industriales, S.A. de C.V.</strong> (en adelante
-                "la Empresa"), con domicilio en Calle Álamos No. 29 Int. 5, Sanctorum Cuautlancingo, Puebla, México,
+                "Skilled"), con domicilio en Calle Álamos No. 29 Int. 5, Sanctorum Cuautlancingo, Puebla, México,
                 es responsable del tratamiento de sus datos personales conforme a lo establecido en la{' '}
                 <em>Ley Federal de Protección de Datos Personales en Posesión de los Particulares</em> (LFPDPPP) y su Reglamento.
               </p>
