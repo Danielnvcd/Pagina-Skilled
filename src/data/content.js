@@ -35,42 +35,66 @@ export const data = {
     {
       id: "SIE",
       name: "SIE Infraestructura Eléctrica",
-      description: "Contamos con personal altamente calificado, comprometido con las necesidades de nuestros clientes, brindando servicios eléctricos especializados y soluciones integrales conforme a estándares y normativas vigentes (Personal Calificado, Normativas Vigentes, Soluciones Integrales).",
-      image: "/servicios/infraestructura.jpg"
+      description: "Servicios eléctricos especializados y soluciones integrales conforme a estándares y normativas vigentes.",
+      image: "/servicios/infraestructura.jpg",
+      highlights: [
+        { title: "Personal Calificado", desc: "Equipo técnico con amplia experiencia en proyectos industriales de alta complejidad." },
+        { title: "Normativas Vigentes", desc: "Servicios bajo estándares nacionales e internacionales de calidad y seguridad (NOM, NFPA, NEC)." },
+        { title: "Soluciones Integrales", desc: "Del diseño hasta la puesta en marcha, cubrimos cada etapa del proyecto eléctrico." }
+      ]
     },
     {
       id: "IPS",
       name: "IPS Integración de Proyectos y Servicios",
-      description: "Proyectos 'Llave en Mano' donde se integran diversos componentes (mecánicos, eléctricos, hidráulicos, neumáticos, etc.) para brindar soluciones completas a las necesidades de nuestros clientes. El ciclo abarca: IDEA, DISEÑO, FABRICACIÓN, TESTING, PUESTA EN MARCHA y ENTREGA & MANTENIMIENTO.",
-      image: "/servicios/integracion.jpg"
+      description: "Proyectos 'Llave en Mano' integrando componentes mecánicos, eléctricos, hidráulicos y neumáticos con un ciclo completo de ejecución.",
+      image: "/servicios/integracion.jpg",
+      pipeline: ["IDEA", "DISEÑO", "FABRICACIÓN", "TESTING", "PUESTA EN MARCHA", "ENTREGA & MANTTO."]
     },
     {
       id: "SIE_ING",
       name: "SIE Ingeniería Eléctrica",
-      description: "Media y baja tensión, iluminación industrial, puesta a tierra y tableros de fuerza y control (armado y fabricación a medida).",
-      image: "/servicios/ingenieria.jpg"
+      description: "Soluciones eléctricas industriales de media y baja tensión, fabricación de tableros y sistemas de protección.",
+      image: "/servicios/ingenieria.jpg",
+      highlights: [
+        { title: "Media y Baja Tensión", desc: "Instalaciones eléctricas especializadas para entornos industriales." },
+        { title: "Iluminación Industrial", desc: "Diseño e instalación de sistemas eficientes y normados." },
+        { title: "Puesta a Tierra", desc: "Protección de equipos, instalaciones y personal." },
+        { title: "Tableros de Fuerza y Control", desc: "Armado y fabricación a medida para cada proceso productivo." }
+      ]
     },
     {
       id: "SISH",
       name: "SISH Ingeniería SW/HW",
-      description: "Elaboración de diagramas eléctricos en AutoCAD/ePLAN y programación PLC. Desarrollo e implementación en plataformas Siemens y Allen-Bradley.",
-      image: "/servicios/software-hardware.jpg"
+      description: "Diagramas eléctricos en AutoCAD/ePLAN y programación PLC en plataformas Siemens y Allen-Bradley.",
+      image: "/servicios/software-hardware.jpg",
+      highlights: [
+        { title: "AutoCAD & ePLAN", desc: "Diagramas eléctricos profesionales en plataformas líderes de la industria." },
+        { title: "Siemens TIA Portal", desc: "Programación PLC para automatización de procesos industriales." },
+        { title: "Allen-Bradley Studio 5000", desc: "Control y automatización para la industria automotriz y manufacturera." }
+      ]
     },
     {
       id: "RVD",
       name: "RVD Redes, Voz y Datos",
-      description: "Diseño e instalación de sistemas de redes para comunicación entre dispositivos productivos. Incluye Diseño de Red, Instalación (cableado estructurado, fibra óptica, ethernet, inalámbrico) e Integración (Conexión de dispositivos, sensores, PLCs y SCADA).",
-      image: "/servicios/redes.jpg"
+      description: "Diseño e instalación de infraestructura de redes industriales para comunicación entre dispositivos productivos.",
+      image: "/servicios/redes.jpg",
+      highlights: [
+        { title: "Diseño de Red", desc: "Arquitectura y planificación de infraestructura de comunicaciones industriales." },
+        { title: "Instalación", desc: "Fibra óptica, cableado ethernet estructurado y sistemas inalámbricos." },
+        { title: "Integración SCADA", desc: "Conexión de PLCs, sensores y sistemas SCADA en redes productivas." }
+      ],
+      certification: { label: "Cert. DATWYLER Fibre-Optic", number: "MX-072400092" }
     },
     {
       id: "SMG",
       name: "SMG Suministro de Materiales en General",
-      description: "Suministramos materiales, equipos, refacciones e insumos de marcas líderes del sector industrial.",
+      description: "Materiales, equipos, refacciones e insumos de marcas líderes del sector industrial.",
       image: "/servicios/suministro.jpg",
-      brands: [
-        "Allen-Bradley", 
-        "Rittal", 
-        "Phoenix Contact"
+      highlights: [
+        { title: "ABB · Siemens · Eaton", desc: "Equipos y componentes de automatización industrial." },
+        { title: "Phoenix Contact · Weidmüller", desc: "Conectividad y protección para instalaciones eléctricas." },
+        { title: "Helukabel · LAPP Group", desc: "Cables y conductores especializados para industria." },
+        { title: "Charofil · Viakon", desc: "Canalización eléctrica y conductores de cobre." }
       ]
     }
   ],
