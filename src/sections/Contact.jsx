@@ -27,7 +27,7 @@ const Contact = () => {
             </p>
 
             {/* Tarjetas de contacto directivo */}
-            <div className="bg-primary-blue text-white rounded-2xl p-8 shadow-lg mt-8 border-l-4 border-accent-red">
+            <div className="bg-primary-blue text-white rounded-2xl p-8 shadow-lg border-l-4 border-accent-red">
               {data.contact.personnel.map((person, index) => (
                 <div key={index} className={index !== 0 ? "border-t border-blue-800 pt-6 mt-6" : ""}>
                   <h4 className="text-lg md:text-xl font-bold mb-3">

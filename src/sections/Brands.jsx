@@ -10,9 +10,24 @@ const Brands = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <SectionTitle title="Nuestros Proveedores" subtitle="Calidad Garantizada" centered={true} />
         
-        <p className="text-gray-600 mb-12 max-w-3xl mx-auto text-lg leading-relaxed">
+        <p className="text-gray-600 mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
           Suministramos e integramos materiales, equipos, refacciones e insumos de las marcas líderes en el sector industrial a nivel mundial.
         </p>
+
+        {/* Brand categories */}
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
+          {[
+            { label: 'Automatización industrial', brands: 'ABB · Siemens · Eaton' },
+            { label: 'Conectividad y protección', brands: 'Phoenix Contact · Weidmüller' },
+            { label: 'Cables y conductores', brands: 'Helukabel · LAPP Group · Ascable-Recael' },
+            { label: 'Canalización eléctrica', brands: 'Charofil · Viakon' },
+          ].map((cat) => (
+            <div key={cat.label} className="bg-neutral-gray border border-neutral-light rounded-xl px-4 py-3 text-left min-w-[180px]">
+              <p className="text-[9px] font-black uppercase tracking-widest text-accent-red mb-1">{cat.label}</p>
+              <p className="text-xs font-bold text-slate-700">{cat.brands}</p>
+            </div>
+          ))}
+        </div>
 
         {/* Marquee Animation Container - Ahora usando la imagen de las marcas */}
         <div className="relative w-full overflow-hidden py-10 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-20 before:bg-gradient-to-r before:from-white before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-20 after:bg-gradient-to-l after:from-white after:to-transparent">

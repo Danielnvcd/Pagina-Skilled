@@ -97,6 +97,26 @@ const Hero = () => {
               </Button>
             </a>
           </motion.div>
+
+          {/* Stats strip */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
+            className="mt-14 flex flex-wrap gap-8"
+          >
+            {[
+              { value: '6', label: 'Años de operación' },
+              { value: '30+', label: 'Proyectos realizados' },
+              { value: '5+', label: 'Clientes industriales' },
+              { value: '4', label: 'Estados del país' },
+            ].map((stat) => (
+              <div key={stat.label} className="flex items-center gap-3">
+                <span className="text-2xl font-black text-accent-red">{stat.value}</span>
+                <span className="text-xs text-blue-200/80 uppercase tracking-wider leading-tight max-w-[80px]">{stat.label}</span>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

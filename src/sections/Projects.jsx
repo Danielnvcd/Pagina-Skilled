@@ -74,7 +74,10 @@ const Projects = () => {
           <Card className="p-0 border-l-4 border-l-accent-red overflow-hidden">
              <div className="bg-primary-blue text-white p-8 flex justify-between items-center gap-4">
                <div>
-                 <span className="text-accent-red font-bold uppercase tracking-wider text-xs block mb-2">Proyecto Destacado</span>
+                 <div className="flex items-center gap-3 mb-2">
+                   <span className="text-accent-red font-bold uppercase tracking-wider text-xs">Proyecto Destacado</span>
+                   <span className="text-[9px] font-black uppercase tracking-widest bg-white/10 border border-white/15 text-blue-200 px-2 py-0.5 rounded-full">Sector Automotriz</span>
+                 </div>
                  <h3 className="text-2xl md:text-3xl font-black">{data.featuredProject.title}</h3>
                </div>
                <img src="/proveedores/vwm.png" alt="Volkswagen de México" className="hidden sm:block h-12 md:h-16 object-contain drop-shadow-md bg-white rounded-lg p-2" />
