@@ -46,25 +46,61 @@ const Projects = () => {
         <SectionTitle title="Experiencia Comprobada" subtitle="Impacto Real" centered={true} />
 
         {/* Contadores Dinámicos */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
           {metricsArray.map((metric, index) => {
             const Icon = iconsMap[index % iconsMap.length];
             return (
-              <Card key={index} className="p-8 text-center" hoverEffect={false}>
-                <div className="flex justify-center mb-4 text-primary-blue">
-                  <Icon size={40} opacity={0.2} />
-                </div>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30, scale: 0.96 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
+                whileTap={{ scale: 0.97 }}
+                className="relative bg-primary-blue rounded-2xl p-8 overflow-hidden group text-center"
+              >
+                {/* Icono de fondo como marca de agua */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.7 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: index * 0.1 + 0.3 }}
+                  className="absolute -bottom-4 -right-4 text-white/5"
+                >
+                  <Icon size={100} />
+                </motion.div>
+
+                {/* Barra superior accent animada */}
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: '2.5rem' }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 + 0.2 }}
+                  className="h-1 bg-accent-red rounded-full mb-6 mx-auto"
+                />
+
+                {/* Número */}
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-5xl font-black text-primary-blue mb-2"
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 + 0.25 }}
+                  className="text-5xl font-black text-white leading-none mb-3"
                 >
                   <StatCounter value={metric.value} />
                 </motion.div>
-                <div className="text-sm font-bold uppercase tracking-wider text-gray-500">{metric.label}</div>
-              </Card>
+
+                {/* Label */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 + 0.35 }}
+                  className="text-xs font-bold uppercase tracking-widest text-blue-300/80 leading-snug"
+                >
+                  {metric.label}
+                </motion.div>
+              </motion.div>
             );
           })}
         </div>
