@@ -3,7 +3,7 @@ import { data } from '../data/content';
 import SectionTitle from '../components/SectionTitle';
 import Card from '../components/Card';
 import * as Icons from 'lucide-react';
-import equipoImg from '../assets/images/equipo.jpg';
+import equipoImg from '../assets/images/equipo.png';
 import CircuitBg from '../components/CircuitBg';
 
 const History = () => {
@@ -27,7 +27,7 @@ const History = () => {
         <SectionTitle title="Nuestra Historia y ADN" subtitle="Fundación y Propósito" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -51,7 +51,7 @@ const History = () => {
             </Card>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -59,9 +59,9 @@ const History = () => {
             className="relative rounded-3xl overflow-hidden shadow-2xl min-h-[380px] flex items-end"
           >
             {/* Imagen de fondo */}
-            <img 
-              src={equipoImg} 
-              alt="Equipo Skilled Proyectos Industriales" 
+            <img
+              src={equipoImg}
+              alt="Equipo Skilled Proyectos Industriales"
               className="absolute inset-0 w-full h-full object-cover"
             />
             {/* Overlay degradado desde abajo */}
