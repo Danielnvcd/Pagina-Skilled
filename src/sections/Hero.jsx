@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import portadaImg from '../assets/images/Portada.png';
 
@@ -92,16 +93,16 @@ const Hero = () => {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <a href="#servicios" className="w-full sm:w-auto">
+            <Link to="/#servicios" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto bg-accent-red hover:bg-red-700 text-white text-sm font-bold uppercase tracking-wider py-4 px-8 rounded-lg shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:shadow-[0_0_30px_rgba(225,29,72,0.5)] hover:-translate-y-0.5 transition-all duration-300">
                 Ver Portafolio
               </button>
-            </a>
-            <a href="#historia" className="w-full sm:w-auto">
+            </Link>
+            <Link to="/historia" className="w-full sm:w-auto">
               <button className="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-white border border-white/20 text-sm font-bold uppercase tracking-wider py-4 px-8 rounded-lg backdrop-blur-sm hover:-translate-y-0.5 transition-all duration-300">
                 Conoce Nuestro ADN
               </button>
-            </a>
+            </Link>
           </motion.div>
 
           {/* Stats strip */}

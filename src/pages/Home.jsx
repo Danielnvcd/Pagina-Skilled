@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Hero from '../sections/Hero';
-import History from '../sections/History';
 import SISH from '../sections/SISH';
 import Brands from '../sections/Brands';
 import Projects from '../sections/Projects';
@@ -27,7 +26,6 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <History />
       <SISH />
       <Brands />
       <Projects />
