@@ -5,15 +5,6 @@ import { data } from '../data/content';
 
 const ICONS = [Zap, Factory, Lightbulb, Cog, Network, ShieldCheck];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 32 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 },
-  }),
-};
-
 const ServiceCard = ({ service, index }) => {
   const Icon = ICONS[index];
   const items = service.highlights
@@ -23,12 +14,7 @@ const ServiceCard = ({ service, index }) => {
     : [];
 
   return (
-    <motion.div
-      custom={index}
-      variants={cardVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+    <div
       className="group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-[0_4px_20px_rgb(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300"
     >
       {/* Card image header */}
@@ -110,7 +96,7 @@ const ServiceCard = ({ service, index }) => {
           <ArrowRight size={16} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
         </Link>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
