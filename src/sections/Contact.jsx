@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { data } from '../data/content';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
-import CircuitBg from '../components/CircuitBg';
 import PrivacyModal from '../components/PrivacyModal';
 import { Mail, Phone, UserCheck } from 'lucide-react';
 
@@ -11,7 +10,6 @@ const Contact = () => {
   const [privacyOpen, setPrivacyOpen] = useState(false);
   return (
     <section id="contacto" className="py-24 bg-white relative overflow-hidden">
-      <CircuitBg />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           

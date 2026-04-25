@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useInView, animate } from 'framer-motion';
 import { data } from '../data/content';
 import SectionTitle from '../components/SectionTitle';
-import CircuitBg from '../components/CircuitBg';
 import { Briefcase, Calendar, Users, MapPin } from 'lucide-react';
 
 const StatCounter = ({ value }) => {
@@ -31,7 +30,6 @@ const Projects = () => {
 
   return (
     <section id="proyectos" className="py-24 bg-white relative overflow-hidden border-b border-slate-100">
-      <CircuitBg />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionTitle 
           subtitle="Impacto Real"
