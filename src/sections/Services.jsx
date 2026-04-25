@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Zap, Factory, Lightbulb, Cog, Network, ShieldCheck, Award, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { data } from '../data/content';
 
 const ICONS = [Zap, Factory, Lightbulb, Cog, Network, ShieldCheck];
@@ -101,13 +102,13 @@ const ServiceCard = ({ service, index }) => {
         )}
 
         {/* CTA */}
-        <a
-          href="#contacto"
+        <Link
+          to="/#contacto"
           className="mt-auto flex items-center justify-center gap-2 w-full py-3 px-4 bg-slate-50 hover:bg-primary-blue text-slate-700 hover:text-white text-sm font-semibold rounded-lg border border-slate-200 hover:border-transparent transition-all duration-300 group/btn"
         >
           Solicitar información
           <ArrowRight size={16} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
-        </a>
+        </Link>
       </div>
     </motion.div>
   );
