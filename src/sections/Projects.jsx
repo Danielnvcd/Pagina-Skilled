@@ -28,8 +28,11 @@ const Projects = () => {
   const iconsMap = [Calendar, Briefcase, Users, MapPin];
   const metricsArray = Object.values(data.stats);
 
-  return (
-    <section id="proyectos" className="py-24 bg-white relative overflow-hidden border-b border-slate-100">
+    <section id="proyectos" className="py-24 bg-primary-blue relative overflow-hidden">
+      {/* Background patterns */}
+      <div className="absolute inset-0 bg-dot-pattern opacity-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-blue via-blue-950 to-primary-blue pointer-events-none" />
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionTitle 
           subtitle="Impacto Real"
@@ -38,60 +41,37 @@ const Projects = () => {
           dark
         />
 
-        {/* Contadores Dinámicos */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 max-w-5xl mx-auto">
+        {/* Contadores Dinámicos - Banner Corporativo */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10 mt-16 max-w-5xl mx-auto border-y border-white/10 py-10">
           {metricsArray.map((metric, index) => {
             const Icon = iconsMap[index % iconsMap.length];
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30, scale: 0.96 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
-                whileTap={{ scale: 0.97 }}
-                className="relative bg-white rounded-xl p-5 md:p-6 overflow-hidden group border border-slate-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300"
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
+                className="relative flex flex-col items-center text-center p-6 sm:p-4 group"
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-primary-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Icono de fondo como marca de agua */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.7 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7, delay: index * 0.1 + 0.3 }}
-                  className="absolute -bottom-4 -right-4 text-slate-50 group-hover:text-blue-50 transition-colors duration-500"
-                >
-                  <Icon size={80} strokeWidth={1} />
-                </motion.div>
-
-                <div className="relative z-10 flex flex-col items-center text-center">
-                  {/* Icono superior */}
-                  <div className="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-blue transition-colors duration-300 border border-slate-100 shadow-sm">
-                    <Icon size={18} className="text-primary-blue group-hover:text-white transition-colors duration-300" />
+                <div className="flex flex-col items-center">
+                  <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-5 group-hover:bg-accent-red transition-colors duration-300 border border-white/10 shadow-lg">
+                    <Icon size={22} className="text-white opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
 
-                  {/* Número */}
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 + 0.25 }}
-                    className="text-3xl md:text-4xl font-black text-slate-900 leading-none mb-2 tracking-tight"
+                    transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
+                    className="text-4xl md:text-5xl font-black text-white leading-none mb-3 tracking-tight drop-shadow-md"
                   >
                     <StatCounter value={metric.value} />
                   </motion.div>
 
-                  {/* Label */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 + 0.35 }}
-                    className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-500 leading-snug"
-                  >
+                  <div className="text-[11px] md:text-xs font-bold uppercase tracking-[0.2em] text-blue-200/80 leading-snug">
                     {metric.label}
-                  </motion.div>
+                  </div>
                 </div>
               </motion.div>
             );
@@ -99,7 +79,6 @@ const Projects = () => {
         </div>
       </div>
     </section>
-  );
 };
 
 export default Projects;

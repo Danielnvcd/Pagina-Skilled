@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const SectionTitle = ({ title, subtitle, centered = true }) => {
+const SectionTitle = ({ title, subtitle, centered = true, dark = false }) => {
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -14,7 +14,7 @@ const SectionTitle = ({ title, subtitle, centered = true }) => {
           {subtitle}
         </span>
       )}
-      <h2 className="text-3xl md:text-5xl font-black text-primary-blue">
+      <h2 className={`text-3xl md:text-5xl font-black ${dark ? 'text-white' : 'text-primary-blue'}`}>
         {title}
       </h2>
       <motion.div
