@@ -5,7 +5,7 @@ import CircuitBg from '../components/CircuitBg';
 
 const Brands = () => {
   return (
-    <section className="py-20 bg-white border-b border-t border-neutral-light overflow-hidden relative">
+    <section id="proveedores" className="py-20 bg-white border-b border-t border-neutral-light overflow-hidden relative">
       <CircuitBg />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <SectionTitle title="Nuestros Proveedores" subtitle="Calidad Garantizada" centered={true} />

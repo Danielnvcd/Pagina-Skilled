@@ -120,7 +120,8 @@ export const data = {
     { name: "Ford", logo: "/proveedores/ford.png" },
     { name: "Tenneco", logo: "/proveedores/tenneco.png" },
     { name: "Volkswagen", logo: "/proveedores/vwm.png" },
-    { name: "Daimler", logo: "/proveedores/Daimler.svg" }
+    { name: "Daimler", logo: "/proveedores/Daimler.svg" },
+    { name: "Dürr AG", logo: "/proveedores/Dürr_AG_logo.svg.png" }
   ],
 
   stats: {

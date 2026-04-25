@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 import { data } from '../data/content';
 import SectionTitle from '../components/SectionTitle';
+import CircuitBg from '../components/CircuitBg';
 
 const Clients = () => {
   return (
-    <section className="py-20 bg-neutral-gray border-y border-neutral-light shadow-inner">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="clientes" className="py-20 bg-white relative overflow-hidden border-y border-slate-100">
+      <CircuitBg />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <SectionTitle title="Empresas que confían en nosotros" subtitle="Nuestros Clientes" centered={true} />
 

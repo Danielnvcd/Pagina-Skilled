@@ -4,16 +4,16 @@ import { data } from '../data/content';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
 import CircuitBg from '../components/CircuitBg';
-import Card from '../components/Card';
 import PrivacyModal from '../components/PrivacyModal';
+import { Mail, Phone, UserCheck } from 'lucide-react';
 
 const Contact = () => {
   const [privacyOpen, setPrivacyOpen] = useState(false);
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section id="contacto" className="py-24 bg-white relative overflow-hidden">
       <CircuitBg />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -22,25 +22,31 @@ const Contact = () => {
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
             <SectionTitle title="¿Listo para optimizar operaciones?" subtitle="Hablemos de Ingeniería" centered={false} />
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="text-lg text-slate-600 mb-10 leading-relaxed">
               Nuestro equipo directivo está preparado para analizar las necesidades de tu planta industrial o proyecto y ofrecer un desarrollo llave en mano.
             </p>
 
-            {/* Tarjetas de contacto directivo */}
-            <div className="bg-primary-blue text-white rounded-2xl p-8 shadow-lg border-l-4 border-accent-red">
+            {/* Tarjetas de contacto directivo - Modernas */}
+            <div className="space-y-6 mt-10">
               {data.contact.personnel.map((person, index) => (
-                <div key={index} className={index !== 0 ? "border-t border-blue-800 pt-6 mt-6" : ""}>
-                  <h4 className="text-lg md:text-xl font-bold mb-3">
-                    {person.name} <span className="font-normal opacity-80 text-base md:text-lg">— {person.position}</span>
-                  </h4>
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-sm md:text-base opacity-90">
-                    <a href={`mailto:${person.email}`} className="text-blue-300 hover:text-white transition-colors underline underline-offset-4 decoration-blue-800 hover:decoration-blue-400">
-                      {person.email}
-                    </a>
-                    <span className="hidden sm:block text-blue-800">|</span>
-                    <a href={`tel:${person.phone.replace(/\s/g,'')}`} className="hover:text-blue-200 transition-colors">
-                      Cel: {person.phone}
-                    </a>
+                <div key={index} className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-300 hover:shadow-md transition-all duration-300 group">
+                  <div className="w-14 h-14 rounded-xl bg-white shadow-sm border border-slate-200 flex items-center justify-center text-primary-blue group-hover:bg-primary-blue group-hover:text-white transition-colors duration-300 flex-shrink-0">
+                    <UserCheck size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-slate-900 leading-tight mb-1">
+                      {person.name}
+                    </h4>
+                    <span className="text-xs font-black text-accent-red uppercase tracking-widest block mb-4">{person.position}</span>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-sm text-slate-600 font-medium">
+                      <a href={`mailto:${person.email}`} className="flex items-center gap-2 hover:text-primary-blue transition-colors">
+                        <Mail size={16} className="text-slate-400 group-hover:text-primary-blue transition-colors" /> {person.email}
+                      </a>
+                      <span className="hidden sm:block text-slate-300">|</span>
+                      <a href={`tel:${person.phone.replace(/\s/g,'')}`} className="flex items-center gap-2 hover:text-primary-blue transition-colors">
+                        <Phone size={16} className="text-slate-400 group-hover:text-primary-blue transition-colors" /> Cel: {person.phone}
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -52,33 +58,35 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            className="lg:mt-12"
           >
-            <Card hoverEffect={false} className="p-8">
-              <h3 className="text-xl font-bold text-slate-800 mb-6">Envíanos un Mensaje</h3>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <div className="bg-white p-10 md:p-12 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-slate-100">
+              <h3 className="text-2xl font-black text-slate-900 mb-8 tracking-tight">Envíenos un Mensaje</h3>
+              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div>
-                  <label htmlFor="name" className="sr-only">Nombre</label>
-                  <input type="text" id="name" placeholder="Nombre completo" className="w-full px-4 py-3 border border-neutral-light rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-red transition-all" />
+                  <input type="text" id="name" placeholder="Nombre completo" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-blue/20 focus:border-primary-blue transition-all text-sm font-medium text-slate-900 placeholder:text-slate-400" />
                 </div>
                 <div>
-                  <label htmlFor="email" className="sr-only">Correo electrónico</label>
-                  <input type="email" id="email" placeholder="Correo electrónico corporativo" className="w-full px-4 py-3 border border-neutral-light rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-red transition-all" />
+                  <input type="email" id="email" placeholder="Correo electrónico corporativo" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-blue/20 focus:border-primary-blue transition-all text-sm font-medium text-slate-900 placeholder:text-slate-400" />
                 </div>
                 <div>
-                  <label htmlFor="message" className="sr-only">Mensaje</label>
-                  <textarea id="message" rows="4" placeholder="Detalles de su requerimiento..." className="w-full px-4 py-3 border border-neutral-light rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-red transition-all resize-none"></textarea>
+                  <textarea id="message" rows="4" placeholder="Detalles de su requerimiento..." className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-blue/20 focus:border-primary-blue transition-all resize-none text-sm font-medium text-slate-900 placeholder:text-slate-400"></textarea>
                 </div>
-                <p className="text-xs text-gray-400 text-center">
+                
+                <div className="pt-2">
+                  <Button variant="primary" className="w-full py-4 text-base shadow-lg shadow-accent-red/20">
+                    Solicitar Asesoría Técnica
+                  </Button>
+                </div>
+
+                <p className="text-[10px] text-slate-400 text-center uppercase tracking-wider font-bold mt-6">
                   Al enviar acepta nuestro{' '}
-                  <button onClick={() => setPrivacyOpen(true)} className="underline hover:text-primary-blue transition-colors">
+                  <button onClick={() => setPrivacyOpen(true)} className="text-primary-blue hover:text-accent-red transition-colors underline underline-offset-4">
                     Aviso de Privacidad
                   </button>
                 </p>
-                <Button variant="primary" className="w-full">
-                  Solicitar Asesoría
-                </Button>
               </form>
-            </Card>
+            </div>
           </motion.div>
 
         </div>
