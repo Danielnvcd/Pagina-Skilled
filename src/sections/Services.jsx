@@ -133,7 +133,7 @@ const Services = () => (
         <span className="text-accent-red font-black uppercase tracking-[0.2em] text-xs mb-3 block">
           Nuestra Oferta
         </span>
-        <h2 className="text-3xl md:text-5xl font-black text-slate-900 leading-tight">
+        <h2 className="text-3xl md:text-5xl font-black text-primary-blue leading-tight">
           Portafolio de Servicios
         </h2>
         <motion.div

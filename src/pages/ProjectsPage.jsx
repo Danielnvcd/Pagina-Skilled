@@ -38,7 +38,7 @@ const ProjectsPage = () => {
           <span className="text-accent-red font-black uppercase tracking-[0.2em] text-xs mb-3 block">
             Nuestra Experiencia
           </span>
-          <h1 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-black text-primary-blue leading-tight">
             Proyectos y Trayectoria
           </h1>
           <motion.div
@@ -143,7 +143,7 @@ const ProjectsPage = () => {
         {/* Timeline Cronológico Profesional - Modern Minimalist */}
         <div className="mt-24 pt-16">
           <div className="text-center mb-24">
-            <h3 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4">Trayectoria Operativa</h3>
+            <h3 className="text-4xl md:text-5xl font-black text-primary-blue tracking-tight mb-4">Trayectoria Operativa</h3>
             <p className="text-slate-500 font-medium max-w-2xl mx-auto">Historial detallado de implementaciones industriales por año.</p>
           </div>
 
