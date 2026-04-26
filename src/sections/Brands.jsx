@@ -4,7 +4,7 @@ import { data } from '../data/content';
 
 const Brands = () => {
   return (
-    <section id="proveedores" className="py-24 bg-white border-b border-slate-100 overflow-hidden relative">
+    <section id="proveedores" className="bg-white border-b border-slate-100 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <SectionTitle title="Socios Tecnológicos" subtitle="Calidad Garantizada" centered={true} />
         
@@ -26,9 +26,9 @@ const Brands = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-white border border-slate-200/80 rounded-xl p-6 text-left shadow-[0_4px_20px_rgb(0,0,0,0.02)] hover:shadow-lg hover:border-blue-100 transition-all duration-300 group"
+              className="bg-white border border-slate-200 rounded-sm p-6 text-left hover:border-primary-blue transition-colors duration-300 group"
             >
-              <div className="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-blue transition-colors duration-300">
+              <div className="w-10 h-10 bg-slate-50 border border-slate-200 rounded-sm flex items-center justify-center mb-4 group-hover:bg-primary-blue group-hover:border-primary-blue transition-colors duration-300">
                 <svg className="w-5 h-5 text-primary-blue group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={cat.icon} />
                 </svg>
@@ -55,15 +55,15 @@ const Brands = () => {
                 <img 
                   src={brand.logo} 
                   alt={brand.name} 
-                  className="max-h-12 md:max-h-16 max-w-[160px] object-contain grayscale-0 opacity-100 group-hover:grayscale group-hover:opacity-50 transition-all duration-500 cursor-pointer"
+                  className="max-h-12 md:max-h-16 max-w-[160px] object-contain transition-all duration-500 cursor-pointer"
                   onError={(e) => {
                     e.target.style.display = 'none';
                     e.target.nextSibling.style.display = 'flex';
                   }}
                 />
                 {/* Fallback de texto si el logo no existe */}
-                <div style={{display: 'none'}} className="h-full w-full items-center justify-center p-4 bg-slate-50 border border-slate-100 rounded-xl group-hover:border-primary-blue group-hover:shadow-md transition-all">
-                  <span className="text-sm font-bold text-slate-400 group-hover:text-primary-blue text-center uppercase tracking-wider">{brand.name}</span>
+                <div style={{display: 'none'}} className="h-full w-full items-center justify-center p-4 bg-slate-50 border border-slate-200 rounded-sm group-hover:border-primary-blue transition-colors">
+                  <span className="text-sm font-bold text-slate-500 group-hover:text-primary-blue text-center uppercase tracking-wider">{brand.name}</span>
                 </div>
               </div>
             ))}

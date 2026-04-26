@@ -7,10 +7,9 @@ const ProvidersPage = () => {
   }, []);
 
   return (
-    <>
-      <div className="pt-24 bg-white" />
+    <div className="pt-32 pb-24 bg-white min-h-screen">
       <Brands />
-    </>
+    </div>
   );
 };
 
