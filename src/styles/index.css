@@ -10,8 +10,23 @@
     padding: 0;
   }
   
+  /* Escala dinámica de toda la interfaz usando root font-size */
+  /* Tailwind usa 'rem', por lo que al cambiar esto, TODA la página crece o se encoge proporcionalmente */
   html {
+    font-size: 16px; /* 100% para pantallas muy grandes */
     scroll-behavior: smooth;
+  }
+
+  @media (max-width: 1536px) {
+    html {
+      font-size: 14px; /* ~87.5% de escala para laptops grandes (1080p) */
+    }
+  }
+
+  @media (max-width: 1280px) {
+    html {
+      font-size: 13px; /* ~81% de escala para laptops más pequeñas */
+    }
   }
   
   *:focus-visible {
