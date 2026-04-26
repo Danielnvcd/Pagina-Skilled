@@ -65,9 +65,9 @@ const Hero = () => {
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-4">
+            <h1 className="text-[2.25rem] sm:text-5xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-4">
               Soluciones integrales en <br />
-              <span className="block min-h-[80px] sm:min-h-[60px] md:min-h-[80px] lg:min-h-[90px] mt-1">
+              <span className="block min-h-[100px] sm:min-h-[80px] md:min-h-[80px] lg:min-h-[90px] mt-1">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-white">
                   {currentText}
                 </span>
@@ -80,7 +80,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-            className="text-lg md:text-xl text-blue-100/80 mb-6 max-w-2xl leading-relaxed font-light"
+            className="text-base sm:text-lg md:text-xl text-blue-100/80 mb-6 max-w-2xl leading-relaxed font-light"
           >
             Ayudamos a plantas industriales a operar con máxima seguridad, eficiencia y rentabilidad a través de servicios de ingeniería de clase mundial.
           </motion.p>
