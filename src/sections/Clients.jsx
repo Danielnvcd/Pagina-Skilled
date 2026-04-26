@@ -9,8 +9,8 @@ const Clients = () => {
         
         <SectionTitle title="Empresas que confían en nosotros" subtitle="Nuestros Clientes" centered={true} />
 
-        <div className="mt-16 bg-white border border-slate-200/60 rounded-2xl shadow-sm overflow-hidden">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 divide-x divide-y divide-slate-100 border-b border-slate-100">
+        <div className="mt-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
             {data.clients.map((client, index) => (
               <motion.div
                 key={client.name}
@@ -18,7 +18,7 @@ const Clients = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: index * 0.05, ease: "easeOut" }}
-                className="flex items-center justify-center p-8 aspect-[3/2] hover:bg-slate-50 transition-colors duration-300 group"
+                className="flex items-center justify-center p-6 sm:p-8 aspect-[3/2] bg-white rounded-2xl shadow-[0_2px_10px_rgb(0,0,0,0.02)] border border-slate-100 hover:border-transparent hover:shadow-[0_8px_30px_rgb(0,65,107,0.06)] hover:-translate-y-1 transition-all duration-300 group"
               >
                 <img 
                   src={client.logo} 

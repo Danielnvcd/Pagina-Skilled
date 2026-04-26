@@ -27,7 +27,7 @@ const Contact = () => {
             {/* Tarjetas de contacto directivo - Modernas */}
             <div className="space-y-6 mt-10">
               {data.contact.personnel.map((person, index) => (
-                <div key={index} className="flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-300 hover:shadow-md transition-all duration-300 group">
+                <div key={index} className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-300 hover:shadow-md transition-all duration-300 group">
                   <div className="w-14 h-14 rounded-xl bg-white shadow-sm border border-slate-200 flex items-center justify-center text-primary-blue group-hover:bg-primary-blue group-hover:text-white transition-colors duration-300 flex-shrink-0">
                     <UserCheck size={24} />
                   </div>
@@ -62,13 +62,13 @@ const Contact = () => {
               <h3 className="text-2xl font-black text-slate-900 mb-8 tracking-tight">Envíenos un Mensaje</h3>
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div>
-                  <input type="text" id="name" placeholder="Nombre completo" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-blue/20 focus:border-primary-blue transition-all text-sm font-medium text-slate-900 placeholder:text-slate-400" />
+                  <input type="text" id="name" placeholder="Nombre completo" className="w-full px-5 py-4 bg-slate-50 hover:bg-slate-100 focus:bg-white border border-slate-200 focus:outline-none focus:ring-4 focus:ring-primary-blue/10 focus:border-primary-blue transition-all text-sm font-medium text-slate-900 placeholder:text-slate-400" />
                 </div>
                 <div>
-                  <input type="email" id="email" placeholder="Correo electrónico corporativo" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-blue/20 focus:border-primary-blue transition-all text-sm font-medium text-slate-900 placeholder:text-slate-400" />
+                  <input type="email" id="email" placeholder="Correo electrónico corporativo" className="w-full px-5 py-4 bg-slate-50 hover:bg-slate-100 focus:bg-white border border-slate-200 focus:outline-none focus:ring-4 focus:ring-primary-blue/10 focus:border-primary-blue transition-all text-sm font-medium text-slate-900 placeholder:text-slate-400" />
                 </div>
                 <div>
-                  <textarea id="message" rows="4" placeholder="Detalles de su requerimiento..." className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-blue/20 focus:border-primary-blue transition-all resize-none text-sm font-medium text-slate-900 placeholder:text-slate-400"></textarea>
+                  <textarea id="message" rows="4" placeholder="Detalles de su requerimiento..." className="w-full px-5 py-4 bg-slate-50 hover:bg-slate-100 focus:bg-white border border-slate-200 focus:outline-none focus:ring-4 focus:ring-primary-blue/10 focus:border-primary-blue transition-all resize-none text-sm font-medium text-slate-900 placeholder:text-slate-400 rounded-xl"></textarea>
                 </div>
                 
                 <div className="pt-2">

@@ -47,7 +47,7 @@ const Hero = () => {
           style={{ backgroundImage: `url(${portadaImg})` }}
         />
         {/* Sleek corporate gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#020b16] via-[#020b16]/90 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#020b16] via-[#020b16]/95 sm:via-[#020b16]/90 to-transparent z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#020b16] via-transparent to-transparent z-10" />
         <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-900/10 clip-path-slant z-10 backdrop-blur-[2px]" />
       </div>
@@ -67,7 +67,7 @@ const Hero = () => {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-4">
               Soluciones integrales en <br />
               <span className="block min-h-[80px] sm:min-h-[60px] md:min-h-[80px] lg:min-h-[90px] mt-1">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-white">
@@ -105,12 +105,11 @@ const Hero = () => {
             </Link>
           </motion.div>
 
-          {/* Stats strip */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
-            className="mt-10 pt-6 border-t border-white/10 grid grid-cols-2 md:flex md:flex-wrap gap-6 md:gap-16"
+            className="mt-16 pt-8 border-t border-white/10 grid grid-cols-2 md:flex md:flex-wrap gap-8 md:gap-16"
           >
             {[
               { value: '6', label: 'Años de operación' },

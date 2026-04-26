@@ -15,7 +15,7 @@ const ServiceCard = ({ service, index }) => {
 
   return (
     <div
-      className="group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-[0_4px_20px_rgb(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300"
+      className="group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,65,107,0.08)] hover:-translate-y-1 transition-all duration-300"
     >
       {/* Card image header */}
       <div className="relative h-48 overflow-hidden bg-slate-900">
@@ -36,7 +36,7 @@ const ServiceCard = ({ service, index }) => {
       </div>
 
       {/* Body container */}
-      <div className="relative flex flex-col flex-1 p-6 pt-8 bg-white">
+      <div className="relative flex flex-col flex-1 p-5 pt-10 sm:p-8 sm:pt-10 bg-white">
         
         {/* Floating Icon Overlapping Image and Body */}
         <div className="absolute -top-8 right-6 w-14 h-14 bg-white rounded-xl shadow-lg border border-slate-100 flex items-center justify-center transform group-hover:-translate-y-1 transition-transform duration-300">
@@ -87,10 +87,9 @@ const ServiceCard = ({ service, index }) => {
           </div>
         )}
 
-        {/* CTA */}
         <Link
           to="/#contacto"
-          className="mt-auto flex items-center justify-center gap-2 w-full py-3 px-4 bg-slate-50 hover:bg-primary-blue text-slate-700 hover:text-white text-sm font-semibold rounded-lg border border-slate-200 hover:border-transparent transition-all duration-300 group/btn"
+          className="mt-auto flex items-center justify-center gap-2 w-full min-h-[44px] py-3 px-4 bg-slate-50 hover:bg-primary-blue text-slate-700 hover:text-white text-sm font-semibold rounded-lg border border-slate-200 hover:border-transparent transition-all duration-300 group/btn"
         >
           Solicitar información
           <ArrowRight size={16} className="transition-transform duration-300 group-hover/btn:translate-x-1" />

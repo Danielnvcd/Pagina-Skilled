@@ -133,7 +133,7 @@ const Navbar = () => {
                 <img src={logoImg} alt="Skilled Logo" className="h-8 object-contain" />
                 <button 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 text-slate-400 hover:text-accent-red transition-colors rounded-full hover:bg-slate-50"
+                  className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-400 hover:text-accent-red transition-colors rounded-full hover:bg-slate-50 active:bg-slate-100"
                 >
                   <X size={24} />
                 </button>
@@ -146,14 +146,14 @@ const Navbar = () => {
                     key={link.name}
                     to={link.href}
                     onClick={(e) => handleHashClick(e, link.href)}
-                    className="block py-4 text-lg font-black text-slate-800 border-b border-slate-50 hover:text-accent-red hover:translate-x-2 transition-all duration-300"
+                    className={`block py-4 text-xl font-black text-slate-800 border-b border-slate-100 hover:text-accent-red hover:translate-x-2 active:scale-[0.98] transition-all duration-300 ${location.pathname === link.href.split('#')[0] && location.hash === (link.href.includes('#') ? '#' + link.href.split('#')[1] : '') ? 'text-accent-red translate-x-2' : ''}`}
                   >
                     {link.name}
                   </Link>
                 ))}
                 <div className="pt-10">
                   <Link to="/#contacto" onClick={(e) => handleHashClick(e, '/#contacto')}>
-                    <Button variant="primary" className="w-full shadow-lg shadow-accent-red/20 py-4 text-base">
+                    <Button variant="primary" className="w-full shadow-lg shadow-accent-red/20 py-4 text-base min-h-[48px] active:scale-[0.98] transition-transform">
                       Contacto
                     </Button>
                   </Link>
