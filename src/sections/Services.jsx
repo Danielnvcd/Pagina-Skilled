@@ -15,7 +15,7 @@ const ServiceCard = ({ service, index }) => {
 
   return (
     <div
-      className="group flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,65,107,0.08)] hover:-translate-y-1 transition-all duration-300"
+      className="group flex flex-col bg-white rounded-sm overflow-hidden border border-slate-200 hover:border-primary-blue transition-colors duration-300"
     >
       {/* Card image header */}
       <div className="relative h-48 overflow-hidden bg-slate-900">
@@ -36,19 +36,17 @@ const ServiceCard = ({ service, index }) => {
       </div>
 
       {/* Body container */}
-      <div className="relative flex flex-col flex-1 p-5 pt-10 sm:p-8 sm:pt-10 bg-white">
+      <div className="relative flex flex-col flex-1 p-5 sm:p-8 bg-white">
         
-        {/* Floating Icon Overlapping Image and Body */}
-        <div className="absolute -top-8 right-6 w-14 h-14 bg-white rounded-xl shadow-lg border border-slate-100 flex items-center justify-center transform group-hover:-translate-y-1 transition-transform duration-300">
-          <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
-             <Icon size={20} className="text-primary-blue" />
+        {/* Title & Icon */}
+        <div className="flex items-center gap-4 mb-4">
+          <div className="w-10 h-10 bg-slate-50 border border-slate-200 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:bg-primary-blue group-hover:border-primary-blue transition-colors duration-300">
+             <Icon size={20} className="text-primary-blue group-hover:text-white transition-colors duration-300" />
           </div>
+          <h3 className="text-lg font-bold text-slate-900 leading-tight group-hover:text-primary-blue transition-colors duration-200">
+            {service.name.replace(/^[A-Z_]+ /, '')}
+          </h3>
         </div>
-
-        {/* Title */}
-        <h3 className="text-lg font-bold text-slate-900 leading-tight mb-3 pr-12 group-hover:text-primary-blue transition-colors duration-200">
-          {service.name.replace(/^[A-Z_]+ /, '')}
-        </h3>
 
         {/* Description */}
         <p className="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">
@@ -78,7 +76,7 @@ const ServiceCard = ({ service, index }) => {
 
         {/* Certification badge */}
         {service.certification && (
-          <div className="mb-6 flex items-center gap-3 bg-slate-50 border border-slate-100 rounded-lg px-4 py-3">
+          <div className="mb-6 flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-sm px-4 py-3">
             <Award size={18} className="text-primary-blue flex-shrink-0" />
             <div>
               <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 leading-none mb-1">Certificación</p>
@@ -89,10 +87,10 @@ const ServiceCard = ({ service, index }) => {
 
         <Link
           to="/#contacto"
-          className="mt-auto flex items-center justify-center gap-2 w-full min-h-[44px] py-3 px-4 bg-slate-50 hover:bg-primary-blue text-slate-700 hover:text-white text-sm font-semibold rounded-lg border border-slate-200 hover:border-transparent transition-all duration-300 group/btn"
+          className="mt-auto flex items-center justify-center gap-2 w-full min-h-[44px] py-3 px-4 bg-transparent hover:bg-slate-50 text-primary-blue text-sm font-semibold rounded-sm border border-slate-200 transition-colors duration-200"
         >
           Solicitar información
-          <ArrowRight size={16} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
+          <ArrowRight size={16} />
         </Link>
       </div>
     </div>

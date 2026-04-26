@@ -50,7 +50,7 @@ const Navbar = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-sm shadow-md py-3' : 'bg-white py-3'
+        scrolled ? 'bg-white border-b border-slate-200 py-3' : 'bg-white py-3'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
@@ -75,7 +75,6 @@ const Navbar = () => {
               }`}
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-accent-red transition-all duration-300 group-hover:w-full rounded-full" />
             </Link>
           ))}
           {/* Social Icons Desktop */}
@@ -125,8 +124,8 @@ const Navbar = () => {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-[100dvh] w-4/5 max-w-sm bg-white shadow-2xl z-[70] md:hidden flex flex-col"
+              transition={{ ease: "easeInOut", duration: 0.3 }}
+              className="fixed top-0 right-0 h-[100dvh] w-4/5 max-w-sm bg-white border-l border-slate-200 z-[70] md:hidden flex flex-col"
             >
               {/* Drawer Header */}
               <div className="flex justify-between items-center p-5 border-b border-slate-100">
@@ -146,14 +145,14 @@ const Navbar = () => {
                     key={link.name}
                     to={link.href}
                     onClick={(e) => handleHashClick(e, link.href)}
-                    className={`block py-4 text-xl font-black text-slate-800 border-b border-slate-100 hover:text-accent-red hover:translate-x-2 active:scale-[0.98] transition-all duration-300 ${location.pathname === link.href.split('#')[0] && location.hash === (link.href.includes('#') ? '#' + link.href.split('#')[1] : '') ? 'text-accent-red translate-x-2' : ''}`}
+                    className={`block py-4 text-xl font-bold text-slate-800 border-b border-slate-100 hover:text-primary-blue active:bg-slate-50 transition-colors ${location.pathname === link.href.split('#')[0] && location.hash === (link.href.includes('#') ? '#' + link.href.split('#')[1] : '') ? 'text-primary-blue' : ''}`}
                   >
                     {link.name}
                   </Link>
                 ))}
                 <div className="pt-10">
                   <Link to="/#contacto" onClick={(e) => handleHashClick(e, '/#contacto')}>
-                    <Button variant="primary" className="w-full shadow-lg shadow-accent-red/20 py-4 text-base min-h-[48px] active:scale-[0.98] transition-transform">
+                    <Button variant="primary" className="w-full py-4 text-base min-h-[48px]">
                       Contacto
                     </Button>
                   </Link>

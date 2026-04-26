@@ -46,10 +46,8 @@ const Hero = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
           style={{ backgroundImage: `url(${portadaImg})` }}
         />
-        {/* Sleek corporate gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#020b16] via-[#020b16]/95 sm:via-[#020b16]/90 to-transparent z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#020b16] via-transparent to-transparent z-10" />
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-900/10 clip-path-slant z-10 backdrop-blur-[2px]" />
+        {/* Solid corporate overlay */}
+        <div className="absolute inset-0 bg-[#020b16]/85 z-10" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
@@ -73,7 +71,7 @@ const Hero = () => {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-white">
                   {currentText}
                 </span>
-                <span className="animate-pulse text-blue-400 ml-1 font-light">|</span>
+                <span className="text-white ml-1 font-light">|</span>
               </span>
             </h1>
           </motion.div>
@@ -94,12 +92,12 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4"
           >
             <Link to="/servicios" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto bg-accent-red hover:bg-red-700 text-white text-sm font-bold uppercase tracking-wider py-4 px-8 rounded-lg shadow-[0_0_20px_rgba(225,29,72,0.3)] hover:shadow-[0_0_30px_rgba(225,29,72,0.5)] hover:-translate-y-0.5 transition-all duration-300">
+              <Button variant="primary" className="w-full text-sm font-bold uppercase tracking-wider py-4 px-8">
                 Ver Portafolio
-              </button>
+              </Button>
             </Link>
             <Link to="/historia" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-white border border-white/20 text-sm font-bold uppercase tracking-wider py-4 px-8 rounded-lg backdrop-blur-sm hover:-translate-y-0.5 transition-all duration-300">
+              <button className="w-full sm:w-auto bg-transparent border border-white/30 hover:bg-white hover:text-[#020b16] text-white text-sm font-bold uppercase tracking-wider py-4 px-8 rounded-sm transition-all duration-200">
                 Conoce Nuestro ADN
               </button>
             </Link>

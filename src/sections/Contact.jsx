@@ -27,8 +27,8 @@ const Contact = () => {
             {/* Tarjetas de contacto directivo - Modernas */}
             <div className="space-y-6 mt-10">
               {data.contact.personnel.map((person, index) => (
-                <div key={index} className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-300 hover:shadow-md transition-all duration-300 group">
-                  <div className="w-14 h-14 rounded-xl bg-white shadow-sm border border-slate-200 flex items-center justify-center text-primary-blue group-hover:bg-primary-blue group-hover:text-white transition-colors duration-300 flex-shrink-0">
+                <div key={index} className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-5 sm:p-6 rounded-sm bg-white border border-slate-200 hover:bg-slate-50 transition-colors duration-300 group">
+                  <div className="w-12 h-12 rounded-sm bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-500 group-hover:text-primary-blue transition-colors duration-300 flex-shrink-0">
                     <UserCheck size={24} />
                   </div>
                   <div>
@@ -58,21 +58,21 @@ const Contact = () => {
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
             className="lg:mt-12"
           >
-            <div className="bg-white p-10 md:p-12 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-slate-100">
+            <div className="bg-white p-10 md:p-12 rounded-sm border border-slate-200">
               <h3 className="text-2xl font-black text-slate-900 mb-8 tracking-tight">Envíenos un Mensaje</h3>
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div>
-                  <input type="text" id="name" placeholder="Nombre completo" className="w-full px-5 py-4 bg-slate-50 hover:bg-slate-100 focus:bg-white border border-slate-200 focus:outline-none focus:ring-4 focus:ring-primary-blue/10 focus:border-primary-blue transition-all text-sm font-medium text-slate-900 placeholder:text-slate-400" />
+                  <input type="text" id="name" placeholder="Nombre completo" className="w-full px-5 py-4 bg-white hover:bg-slate-50 focus:bg-white border border-slate-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-primary-blue focus:border-primary-blue transition-colors text-sm font-medium text-slate-900 placeholder:text-slate-400" />
                 </div>
                 <div>
-                  <input type="email" id="email" placeholder="Correo electrónico corporativo" className="w-full px-5 py-4 bg-slate-50 hover:bg-slate-100 focus:bg-white border border-slate-200 focus:outline-none focus:ring-4 focus:ring-primary-blue/10 focus:border-primary-blue transition-all text-sm font-medium text-slate-900 placeholder:text-slate-400" />
+                  <input type="email" id="email" placeholder="Correo electrónico corporativo" className="w-full px-5 py-4 bg-white hover:bg-slate-50 focus:bg-white border border-slate-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-primary-blue focus:border-primary-blue transition-colors text-sm font-medium text-slate-900 placeholder:text-slate-400" />
                 </div>
                 <div>
-                  <textarea id="message" rows="4" placeholder="Detalles de su requerimiento..." className="w-full px-5 py-4 bg-slate-50 hover:bg-slate-100 focus:bg-white border border-slate-200 focus:outline-none focus:ring-4 focus:ring-primary-blue/10 focus:border-primary-blue transition-all resize-none text-sm font-medium text-slate-900 placeholder:text-slate-400 rounded-xl"></textarea>
+                  <textarea id="message" rows="4" placeholder="Detalles de su requerimiento..." className="w-full px-5 py-4 bg-white hover:bg-slate-50 focus:bg-white border border-slate-300 rounded-sm focus:outline-none focus:ring-1 focus:ring-primary-blue focus:border-primary-blue transition-colors resize-none text-sm font-medium text-slate-900 placeholder:text-slate-400"></textarea>
                 </div>
                 
                 <div className="pt-2">
-                  <Button variant="primary" className="w-full py-4 text-base shadow-lg shadow-accent-red/20">
+                  <Button variant="primary" className="w-full py-4 text-base">
                     Solicitar Asesoría Técnica
                   </Button>
                 </div>

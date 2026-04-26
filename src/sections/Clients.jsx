@@ -18,12 +18,12 @@ const Clients = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: index * 0.05, ease: "easeOut" }}
-                className="flex items-center justify-center p-6 sm:p-8 aspect-[3/2] bg-white rounded-2xl shadow-[0_2px_10px_rgb(0,0,0,0.02)] border border-slate-100 hover:border-transparent hover:shadow-[0_8px_30px_rgb(0,65,107,0.06)] hover:-translate-y-1 transition-all duration-300 group"
+                className="flex items-center justify-center p-6 sm:p-8 aspect-[3/2] bg-slate-50 border border-slate-200 hover:border-slate-300 transition-colors duration-300 group rounded-sm"
               >
                 <img 
                   src={client.logo} 
                   alt={client.name} 
-                  className="max-h-14 max-w-[120px] object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 scale-95 group-hover:scale-100"
+                  className="max-h-14 max-w-[120px] object-contain grayscale opacity-60 group-hover:opacity-100 transition-opacity duration-300"
                   onError={(e) => {
                     e.target.style.display = 'none';
                     e.target.nextSibling.style.display = 'flex';
