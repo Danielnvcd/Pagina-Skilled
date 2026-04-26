@@ -1,84 +1,91 @@
-import { useEffect, useRef, useState } from 'react';
-import { motion, useInView, animate } from 'framer-motion';
 import { data } from '../data/content';
 import SectionTitle from '../components/SectionTitle';
-import { Briefcase, Calendar, Users, MapPin } from 'lucide-react';
-
-const StatCounter = ({ value }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const num = parseInt(String(value), 10);
-  const suffix = String(value).replace(String(num), '');
-  const [display, setDisplay] = useState('0' + suffix);
-
-  useEffect(() => {
-    if (!isInView) return;
-    const controls = animate(0, num, {
-      duration: 1.8,
-      ease: [0.22, 1, 0.36, 1],
-      onUpdate: (v) => setDisplay(String(Math.round(v)) + suffix),
-    });
-    return controls.stop;
-  }, [isInView, num, suffix]);
-
-  return <span ref={ref}>{display}</span>;
-};
+import { Wrench, Zap, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
-  const iconsMap = [Calendar, Briefcase, Users, MapPin];
-  const metricsArray = Object.values(data.stats);
-
-    <section id="proyectos" className="py-24 bg-primary-blue relative overflow-hidden">
-      {/* Background patterns */}
-      <div className="absolute inset-0 bg-dot-pattern opacity-10 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-blue via-blue-950 to-primary-blue pointer-events-none" />
-
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  return (
+    <section id="proyectos" className="py-24 bg-white relative overflow-hidden border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionTitle 
-          subtitle="Impacto Real"
-          title="Experiencia Comprobada"
+          subtitle="Caso de Éxito"
+          title="Proyectos Destacados"
           centered
-          dark
         />
 
-        {/* Contadores Dinámicos - Banner Corporativo */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10 mt-16 max-w-5xl mx-auto border-y border-white/10 py-10">
-          {metricsArray.map((metric, index) => {
-            const Icon = iconsMap[index % iconsMap.length];
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
-                className="relative flex flex-col items-center text-center p-6 sm:p-4 group"
-              >
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center mb-5 group-hover:bg-accent-red transition-colors duration-300 border border-white/10 shadow-lg">
-                    <Icon size={22} className="text-white opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="mt-16 bg-white rounded-sm border border-slate-200 overflow-hidden flex flex-col lg:flex-row hover:border-primary-blue transition-colors duration-300">
+          {/* Left Content */}
+          <div className="lg:w-2/3 p-8 md:p-12">
+            <div className="flex items-center gap-2 mb-6">
+              <span className="text-accent-red font-bold uppercase tracking-widest text-[10px]">Industria Automotriz</span>
+              <span className="w-1 h-1 rounded-full bg-slate-300"></span>
+              <span className="text-slate-500 font-bold uppercase tracking-widest text-[10px]">Proyecto Llave en Mano</span>
+            </div>
+            
+            <h3 className="text-2xl md:text-3xl font-black tracking-tight text-slate-900 mb-8 leading-tight">
+              {data.featuredProject.title}
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+              {/* Instalación */}
+              <div>
+                <h4 className="text-sm font-bold text-slate-900 mb-4 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-sm bg-slate-50 border border-slate-200 flex items-center justify-center text-primary-blue">
+                    <Wrench size={14} />
                   </div>
-
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
-                    className="text-4xl md:text-5xl font-black text-white leading-none mb-3 tracking-tight drop-shadow-md"
-                  >
-                    <StatCounter value={metric.value} />
-                  </motion.div>
-
-                  <div className="text-[11px] md:text-xs font-bold uppercase tracking-[0.2em] text-blue-200/80 leading-snug">
-                    {metric.label}
+                  Instalación
+                </h4>
+                <ul className="text-xs text-slate-600 space-y-3">
+                  {data.featuredProject.installation.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-primary-blue mt-0.5 flex-shrink-0">
+                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
+                      </span>
+                      <span className="leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              {/* Pruebas */}
+              <div>
+                <h4 className="text-sm font-bold text-slate-900 mb-4 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-sm bg-slate-50 border border-slate-200 flex items-center justify-center text-primary-blue">
+                    <Zap size={14} />
                   </div>
-                </div>
-              </motion.div>
-            );
-          })}
+                  Pruebas y Redes
+                </h4>
+                <ul className="text-xs text-slate-600 space-y-3">
+                  {data.featuredProject.electricalAndNetworkTesting.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-primary-blue mt-0.5 flex-shrink-0">
+                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
+                      </span>
+                      <span className="leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-10 pt-8 border-t border-slate-200">
+               <Link to="/proyectos" className="inline-flex items-center gap-2 text-primary-blue font-bold text-sm hover:text-blue-700 transition-colors">
+                  Ver portafolio completo de proyectos <ArrowRight size={16} />
+               </Link>
+            </div>
+          </div>
+
+          {/* Right Showcase Image */}
+          <div className="lg:w-1/3 bg-slate-50 relative flex items-center justify-center min-h-[250px] lg:min-h-full overflow-hidden border-l border-slate-200">
+            <div className="relative z-10 w-32 h-32 md:w-48 md:h-48 bg-white rounded-full flex items-center justify-center border border-slate-200 p-6 md:p-8">
+              <img src="/proveedores/vwm.png" alt="Volkswagen de México" className="w-full h-full object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500" />
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
+  );
 };
 
 export default Projects;

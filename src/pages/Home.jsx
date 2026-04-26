@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Hero from '../sections/Hero';
 import SISH from '../sections/SISH';
-import Brands from '../sections/Brands';
-import Projects from '../sections/Projects';
+import Methodology from '../sections/Methodology';
+import Industries from '../sections/Industries';
 import Clients from '../sections/Clients';
 import Contact from '../sections/Contact';
 
@@ -27,8 +27,8 @@ const Home = () => {
     <>
       <Hero />
       <SISH />
-      <Brands />
-      <Projects />
+      <Methodology />
+      <Industries />
       <Clients />
       <Contact />
     </>
