@@ -200,8 +200,7 @@ export const data = {
       {
         name: "ING. MAURO MÉNDEZ",
         position: "Gerente de Proyectos",
-        email: "mauro.mendez@skilled.mx",
-        phone: "222 705 37 13"
+        email: "mauro.mendez@skilled.mx"
       }
     ]
   }
