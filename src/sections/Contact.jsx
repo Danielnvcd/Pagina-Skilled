@@ -40,10 +40,14 @@ const Contact = () => {
                       <a href={`mailto:${person.email}`} className="flex items-center gap-2 hover:text-primary-blue transition-colors">
                         <Mail size={16} className="text-slate-400 group-hover:text-primary-blue transition-colors" /> {person.email}
                       </a>
-                      <span className="hidden sm:block text-slate-300">|</span>
-                      <a href={`tel:${person.phone.replace(/\s/g,'')}`} className="flex items-center gap-2 hover:text-primary-blue transition-colors">
-                        <Phone size={16} className="text-slate-400 group-hover:text-primary-blue transition-colors" /> Cel: {person.phone}
-                      </a>
+                      {person.phone && (
+                        <>
+                          <span className="hidden sm:block text-slate-300">|</span>
+                          <a href={`tel:${person.phone.replace(/\s/g,'')}`} className="flex items-center gap-2 hover:text-primary-blue transition-colors">
+                            <Phone size={16} className="text-slate-400 group-hover:text-primary-blue transition-colors" /> Cel: {person.phone}
+                          </a>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>

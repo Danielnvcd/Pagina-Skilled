@@ -195,8 +195,7 @@ export const data = {
       {
         name: "ING. JOEL BRAVO",
         position: "Gerente General",
-        email: "joel.bravo@skilled.mx",
-        phone: "222 413 67 94"
+        email: "joel.bravo@skilled.mx"
       },
       {
         name: "ING. MAURO MÉNDEZ",
