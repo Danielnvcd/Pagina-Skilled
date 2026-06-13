@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { Zap, Factory, Lightbulb, Cog, Network, ShieldCheck, Award, ArrowRight } from 'lucide-react';
+import { PlugZap, Factory, BrainCircuit, Settings2, ServerCog, BadgeCheck, Medal, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { data } from '../data/content';
 
-const ICONS = [Zap, Factory, Lightbulb, Cog, Network, ShieldCheck];
+const ICONS = [PlugZap, Factory, BrainCircuit, Settings2, ServerCog, BadgeCheck];
 
 const ServiceCard = ({ service, index }) => {
   const Icon = ICONS[index];
@@ -77,7 +77,7 @@ const ServiceCard = ({ service, index }) => {
         {/* Certification badge */}
         {service.certification && (
           <div className="mb-6 flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-sm px-4 py-3">
-            <Award size={18} className="text-primary-blue flex-shrink-0" />
+            <Medal size={18} className="text-primary-blue flex-shrink-0" />
             <div>
               <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 leading-none mb-1">Certificación</p>
               <p className="text-xs font-semibold text-slate-800 leading-tight">{service.certification.label}</p>
@@ -90,7 +90,7 @@ const ServiceCard = ({ service, index }) => {
           className="mt-auto flex items-center justify-center gap-2 w-full min-h-[44px] py-3 px-4 bg-transparent hover:bg-slate-50 text-primary-blue text-sm font-semibold rounded-sm border border-slate-200 transition-colors duration-200"
         >
           Solicitar información
-          <ArrowRight size={16} />
+          <ChevronRight size={16} />
         </Link>
       </div>
     </div>

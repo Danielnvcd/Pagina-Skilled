@@ -4,7 +4,7 @@ import { data } from '../data/content';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
 import PrivacyModal from '../components/PrivacyModal';
-import { Mail, Phone, UserCheck } from 'lucide-react';
+import { Send, PhoneCall, UserCog } from 'lucide-react';
 
 const Contact = () => {
   const [privacyOpen, setPrivacyOpen] = useState(false);
@@ -29,7 +29,7 @@ const Contact = () => {
               {data.contact.personnel.map((person, index) => (
                 <div key={index} className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 p-5 sm:p-6 rounded-sm bg-white border border-slate-200 hover:bg-slate-50 transition-colors duration-300 group">
                   <div className="w-12 h-12 rounded-sm bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-500 group-hover:text-primary-blue transition-colors duration-300 flex-shrink-0">
-                    <UserCheck size={24} />
+                    <UserCog size={24} />
                   </div>
                   <div>
                     <h4 className="text-xl font-bold text-slate-900 leading-tight mb-1">
@@ -38,13 +38,13 @@ const Contact = () => {
                     <span className="text-xs font-black text-accent-red uppercase tracking-widest block mb-4">{person.position}</span>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-sm text-slate-600 font-medium">
                       <a href={`mailto:${person.email}`} className="flex items-center gap-2 hover:text-primary-blue transition-colors">
-                        <Mail size={16} className="text-slate-400 group-hover:text-primary-blue transition-colors" /> {person.email}
+                        <Send size={16} className="text-slate-400 group-hover:text-primary-blue transition-colors" /> {person.email}
                       </a>
                       {person.phone && (
                         <>
                           <span className="hidden sm:block text-slate-300">|</span>
                           <a href={`tel:${person.phone.replace(/\s/g,'')}`} className="flex items-center gap-2 hover:text-primary-blue transition-colors">
-                            <Phone size={16} className="text-slate-400 group-hover:text-primary-blue transition-colors" /> Cel: {person.phone}
+                            <PhoneCall size={16} className="text-slate-400 group-hover:text-primary-blue transition-colors" /> Cel: {person.phone}
                           </a>
                         </>
                       )}

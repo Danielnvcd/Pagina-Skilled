@@ -1,4 +1,4 @@
-import { Car, Factory, Network, Zap } from 'lucide-react';
+import { CarFront, Factory, ServerCog, Activity } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
 
 const Industries = () => {
@@ -8,7 +8,7 @@ const Industries = () => {
       name: 'Automotriz y Autopartes',
       desc: 'Automatización de líneas de ensamble, celdas robóticas y control de calidad bajo estrictos estándares de la industria.',
       img: '/sectores/automotriz.jpg',
-      icon: Car
+      icon: CarFront
     },
     {
       id: 'manufactura',
@@ -22,19 +22,19 @@ const Industries = () => {
       name: 'Redes Industriales',
       desc: 'Diseño e implementación de topologías robustas, tendido de fibra óptica y certificación de nodos de control (Profinet, Ethernet/IP).',
       img: '/sectores/redes.jpg',
-      icon: Network
+      icon: ServerCog
     },
     {
       id: 'energia',
       name: 'Energía y Facilidades',
       desc: 'Sistemas de monitoreo de energía (SCADA), cuartos de control y automatización de subestaciones y servicios auxiliares.',
       img: '/sectores/energia.jpg',
-      icon: Zap
+      icon: Activity
     }
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden border-b border-slate-200">
+    <section className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle 
           subtitle="Sectores de Especialidad"
@@ -42,42 +42,33 @@ const Industries = () => {
           centered
         />
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0 lg:divide-x divide-slate-200">
           {sectors.map((sector) => {
             const Icon = sector.icon;
             return (
-              <div key={sector.id} className="group flex flex-col bg-white rounded-sm border border-slate-200 overflow-hidden hover:border-primary-blue transition-colors duration-300">
-                {/* Image Container */}
-                <div className="relative h-48 overflow-hidden bg-slate-900 border-b border-slate-100">
-                  <div className="absolute inset-0 bg-primary-blue/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+              <div key={sector.id} className="flex flex-col lg:px-8 first:lg:pl-0 last:lg:pr-0">
+                {/* Image */}
+                <div className="relative h-44 overflow-hidden mb-6">
                   <img 
                     src={sector.img} 
                     alt={sector.name} 
-                    className="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                    className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
                     onError={(e) => {
                       e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'flex';
                     }}
                   />
-                  {/* Fallback si no hay imagen */}
-                  <div style={{ display: 'none' }} className="absolute inset-0 bg-slate-100 flex items-center justify-center">
-                    <span className="text-slate-400 text-xs font-bold uppercase tracking-widest">{sector.id}.jpg</span>
-                  </div>
+                </div>
 
-                  <div className="absolute bottom-4 right-4 w-10 h-10 bg-white rounded-sm flex items-center justify-center z-20 shadow-sm border border-slate-100 group-hover:border-primary-blue transition-colors">
-                    <Icon size={20} className="text-primary-blue" />
-                  </div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-1 h-8 bg-primary-blue rounded-full flex-shrink-0"></div>
+                  <Icon size={22} className="text-primary-blue flex-shrink-0" />
                 </div>
-                
-                {/* Content */}
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-primary-blue transition-colors">
-                    {sector.name}
-                  </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    {sector.desc}
-                  </p>
-                </div>
+                <h3 className="text-base font-bold text-slate-900 mb-3">
+                  {sector.name}
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {sector.desc}
+                </p>
               </div>
             );
           })}

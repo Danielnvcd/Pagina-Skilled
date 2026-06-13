@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { data } from '../data/content';
-import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram } from 'lucide-react';
+import { Send, PhoneCall, MapPin, Linkedin, Facebook, Instagram } from 'lucide-react';
 import logoImg from '../assets/images/logo.png';
 import PrivacyModal from './PrivacyModal';
 
@@ -52,13 +52,13 @@ const Footer = () => {
             <h4 className="text-base font-bold mb-4 border-b border-blue-800 pb-1">Contáctanos</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start">
-                <Mail className="text-accent-red mr-2 mt-0.5 flex-shrink-0" size={16} />
+                <Send className="text-accent-red mr-2 mt-0.5 flex-shrink-0" size={16} />
                 <a href={`mailto:${data.contact.companyEmail}`} className="text-blue-200 hover:text-white transition-colors">
                   {data.contact.companyEmail}
                 </a>
               </li>
               <li className="flex items-start">
-                <Phone className="text-accent-red mr-2 mt-0.5 flex-shrink-0" size={16} />
+                <PhoneCall className="text-accent-red mr-2 mt-0.5 flex-shrink-0" size={16} />
                 <a href={`tel:${data.contact.companyPhone.replace(/\s/g,'')}`} className="text-blue-200 hover:text-white transition-colors">
                   {data.contact.companyPhone}
                 </a>

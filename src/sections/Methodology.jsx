@@ -1,32 +1,32 @@
-import { ShieldCheck, HardHat, Cog, CheckCircle2 } from 'lucide-react';
+import { Shield, ClipboardList, PencilRuler, ListChecks } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
 
 const Methodology = () => {
   const steps = [
     {
-      icon: HardHat,
+      icon: ClipboardList,
       title: '1. Levantamiento y Diagnóstico',
       desc: 'Inspección técnica en planta, evaluación de infraestructura existente y levantamiento de requerimientos bajo normativas de seguridad (NOM/OSHA).',
     },
     {
-      icon: Cog,
+      icon: PencilRuler,
       title: '2. Ingeniería de Detalle',
       desc: 'Diseño de diagramas eléctricos (ePLAN/AutoCAD) y arquitectura de control. Selección rigurosa de componentes (Siemens, Allen-Bradley).',
     },
     {
-      icon: CheckCircle2,
+      icon: ListChecks,
       title: '3. Integración y Ejecución',
       desc: 'Programación de PLC/HMI, ensamble de tableros y despliegue en sitio garantizando cero tiempos de inactividad no programados (Zero Downtime).',
     },
     {
-      icon: ShieldCheck,
+      icon: Shield,
       title: '4. Commissioning y Soporte',
       desc: 'Puesta en marcha, pruebas de lazo (loop checks), entrega de planos "As-Built" y pólizas de mantenimiento preventivo/correctivo.',
     }
   ];
 
   return (
-    <section className="py-24 bg-slate-50 border-y border-slate-200">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <SectionTitle 
@@ -35,18 +35,19 @@ const Methodology = () => {
           centered={true} 
         />
         
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0 lg:divide-x divide-slate-200">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
               <div 
                 key={index} 
-                className="bg-white p-8 rounded-sm border border-slate-200 hover:border-primary-blue transition-colors duration-300 flex flex-col h-full"
+                className="flex flex-col h-full lg:px-8 first:lg:pl-0 last:lg:pr-0"
               >
-                <div className="w-12 h-12 bg-slate-50 border border-slate-200 flex items-center justify-center rounded-sm mb-6 flex-shrink-0">
-                  <Icon size={24} className="text-primary-blue" />
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-1 h-8 bg-primary-blue rounded-full flex-shrink-0"></div>
+                  <Icon size={22} className="text-primary-blue flex-shrink-0" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3 tracking-tight">
+                <h3 className="text-base font-bold text-slate-900 mb-3 tracking-tight">
                   {step.title}
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed flex-grow">
@@ -58,7 +59,7 @@ const Methodology = () => {
         </div>
 
         {/* Corporate Commitment Banner */}
-        <div className="mt-12 bg-[#020b16] rounded-sm p-8 sm:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+        <div className="mt-16 bg-[#020b16] p-8 sm:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
           <div className="max-w-2xl">
             <h4 className="text-white text-xl font-bold mb-2">Compromiso Llave en Mano</h4>
             <p className="text-blue-100/70 text-sm leading-relaxed">
@@ -66,8 +67,8 @@ const Methodology = () => {
             </p>
           </div>
           <div className="flex-shrink-0">
-            <div className="px-6 py-3 border border-white/20 rounded-sm bg-white/5 flex items-center gap-3">
-              <ShieldCheck size={20} className="text-accent-red" />
+            <div className="px-6 py-3 border border-white/20 bg-white/5 flex items-center gap-3">
+              <Shield size={20} className="text-accent-red" />
               <span className="text-white text-sm font-bold tracking-wide">Garantía de Integración</span>
             </div>
           </div>

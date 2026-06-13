@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Zap, Network, ShieldCheck, Wrench, Brush, Cpu, Factory } from 'lucide-react';
+import { CalendarDays, Activity, ServerCog, Shield, Settings2, PencilRuler, Cpu, Factory } from 'lucide-react';
 import { data } from '../data/content';
 import Card from '../components/Card';
 
 const getProjectIcon = (description, client) => {
   const text = (description + " " + client).toLowerCase();
-  if (text.includes('eléctrica') || text.includes('tablero') || text.includes('ccm')) return Zap;
-  if (text.includes('red') || text.includes('network') || text.includes('cctv') || text.includes('fibra')) return Network;
+  if (text.includes('eléctrica') || text.includes('tablero') || text.includes('ccm')) return Activity;
+  if (text.includes('red') || text.includes('network') || text.includes('cctv') || text.includes('fibra')) return ServerCog;
   if (text.includes('robot') || text.includes('plc')) return Cpu;
-  if (text.includes('safety')) return ShieldCheck;
-  if (text.includes('pintura') || text.includes('cabina')) return Brush;
-  if (text.includes('mecánico') || text.includes('neumático') || text.includes('instalación') || text.includes('retrofit')) return Wrench;
+  if (text.includes('safety')) return Shield;
+  if (text.includes('pintura') || text.includes('cabina')) return PencilRuler;
+  if (text.includes('mecánico') || text.includes('neumático') || text.includes('instalación') || text.includes('retrofit')) return Settings2;
   return Factory;
 };
 
@@ -73,7 +73,7 @@ const ProjectsPage = () => {
                 <div>
                   <h4 className="text-sm font-bold text-slate-900 mb-3 flex items-center gap-2">
                     <div className="w-6 h-6 rounded bg-blue-50 flex items-center justify-center text-primary-blue">
-                      <Wrench size={12} />
+                      <Settings2 size={12} />
                     </div>
                     Instalación
                   </h4>
@@ -93,7 +93,7 @@ const ProjectsPage = () => {
                 <div>
                   <h4 className="text-sm font-bold text-slate-900 mb-3 flex items-center gap-2">
                     <div className="w-6 h-6 rounded bg-blue-50 flex items-center justify-center text-primary-blue">
-                      <Zap size={12} />
+                      <Activity size={12} />
                     </div>
                     Pruebas y Redes
                   </h4>

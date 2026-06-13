@@ -1,6 +1,6 @@
 import { data } from '../data/content';
 import SectionTitle from '../components/SectionTitle';
-import { Wrench, Zap, ArrowRight } from 'lucide-react';
+import { Settings2, Activity, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Projects = () => {
@@ -31,7 +31,7 @@ const Projects = () => {
               <div>
                 <h4 className="text-sm font-bold text-slate-900 mb-4 flex items-center gap-3">
                   <div className="w-8 h-8 rounded-sm bg-slate-50 border border-slate-200 flex items-center justify-center text-primary-blue">
-                    <Wrench size={14} />
+                    <Settings2 size={14} />
                   </div>
                   Instalación
                 </h4>
@@ -51,7 +51,7 @@ const Projects = () => {
               <div>
                 <h4 className="text-sm font-bold text-slate-900 mb-4 flex items-center gap-3">
                   <div className="w-8 h-8 rounded-sm bg-slate-50 border border-slate-200 flex items-center justify-center text-primary-blue">
-                    <Zap size={14} />
+                    <Activity size={14} />
                   </div>
                   Pruebas y Redes
                 </h4>
@@ -70,7 +70,7 @@ const Projects = () => {
 
             <div className="mt-10 pt-8 border-t border-slate-200">
                <Link to="/proyectos" className="inline-flex items-center gap-2 text-primary-blue font-bold text-sm hover:text-blue-700 transition-colors">
-                  Ver portafolio completo de proyectos <ArrowRight size={16} />
+                  Ver portafolio completo de proyectos <ChevronRight size={16} />
                </Link>
             </div>
           </div>
