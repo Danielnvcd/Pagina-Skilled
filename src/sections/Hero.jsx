@@ -114,14 +114,27 @@ const Hero = () => {
               className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 mb-16"
             >
               <Link to="/servicios" className="w-full sm:w-auto">
-                <Button variant="primary" className="w-full text-sm font-bold uppercase tracking-wider py-4 px-8">
-                  Ver Portafolio <ChevronRight size={16} className="ml-1" />
-                </Button>
+                <motion.div
+                  whileHover={{ y: -2 }}
+                  whileTap={{ y: 0 }}
+                  transition={{ duration: 0.2, ease: 'easeOut' }}
+                >
+                  <Button variant="primary" className="w-full text-sm font-bold uppercase tracking-wider py-4 px-8 group">
+                    Ver Portafolio 
+                    <ChevronRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Button>
+                </motion.div>
               </Link>
               <Link to="/historia" className="w-full sm:w-auto">
-                <button className="w-full sm:w-auto text-primary-blue text-sm font-bold uppercase tracking-wider py-4 transition-colors hover:text-accent-red">
+                <motion.button
+                  whileHover={{ y: -2 }}
+                  whileTap={{ y: 0 }}
+                  transition={{ duration: 0.2, ease: 'easeOut' }}
+                  className="w-full sm:w-auto text-primary-blue text-sm font-bold uppercase tracking-wider py-4 transition-colors hover:text-accent-red relative group"
+                >
                   Conoce Nuestro ADN
-                </button>
+                  <span className="absolute bottom-2 left-0 w-0 h-[2px] bg-accent-red group-hover:w-full transition-all duration-300 ease-out"></span>
+                </motion.button>
               </Link>
             </motion.div>
 
