@@ -1,13 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import App from './App.jsx'
+import { ViteReactSSG } from 'vite-react-ssg'
+import { routes } from './routes'
 import './styles/index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-)
+// vite-react-ssg gestiona el render (SSG en build, hidratación en cliente)
+// y el <head> vía el componente Head (ver src/components/Seo.jsx).
+export const createRoot = ViteReactSSG({ routes })

@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { CalendarDays, Activity, ServerCog, Shield, Settings2, PencilRuler, Cpu, Factory } from 'lucide-react';
+import { Activity, ServerCog, Shield, Settings2, PencilRuler, Cpu, Factory } from 'lucide-react';
 import { data } from '../data/content';
+import Seo from '../components/Seo';
 import Card from '../components/Card';
 
 const getProjectIcon = (description, client) => {
@@ -22,6 +23,11 @@ const ProjectsPage = () => {
 
   return (
     <div className="pt-32 pb-24 bg-slate-50 min-h-screen relative overflow-hidden">
+      <Seo
+        title="Proyectos"
+        path="/proyectos"
+        description="Trayectoria comprobada en proyectos industriales: instalación de robots, tableros de fuerza y control, cabinas de pintura y redes para Ford, Volkswagen, Daimler, Stellantis y Dürr."
+      />
       {/* Background patterns */}
       <div className="absolute inset-0 bg-dot-pattern opacity-[0.03] pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-slate-100 pointer-events-none" />

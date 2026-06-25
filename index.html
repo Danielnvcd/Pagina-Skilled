@@ -5,15 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO primario -->
-  <title>Skilled Proyectos Industriales | Ingeniería Eléctrica y Automatización — Puebla, México</title>
-  <meta name="description"
-    content="Empresa de ingeniería eléctrica, automatización PLC, redes industriales y proyectos llave en mano en Puebla, México. Más de 30 proyectos con clientes como VW, Ford y Daimler." />
+  <!-- SEO primario (title/description/OG/Twitter por página los gestiona react-helmet-async; ver src/components/Seo.jsx) -->
+  <title>Skilled Proyectos Industriales | Automatización Industrial y Soluciones Eléctricas — Puebla, México</title>
   <meta name="keywords"
-    content="ingeniería eléctrica, proyectos industriales, automatización PLC, Siemens, Allen-Bradley, redes industriales, tableros eléctricos, Puebla, México" />
+    content="automatización industrial, ingeniería eléctrica, programación PLC, integración de robots, tableros eléctricos, líneas automatizadas, Siemens, Allen-Bradley, industria automotriz, manufactura, proyectos llave en mano, Puebla, México" />
   <meta name="author" content="Skilled Proyectos Industriales" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.skilled.mx/" />
+  <meta name="publisher" content="Skilled Proyectos Industriales" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <!-- Geo / idioma -->
+  <meta name="language" content="Spanish" />
+  <meta name="geo.region" content="MX-PUE" />
+  <meta name="geo.placename" content="Puebla, México" />
+  <meta name="geo.position" content="19.0760;-98.2321" />
+  <meta name="ICBM" content="19.0760, -98.2321" />
 
   <!-- Color de tema en móvil -->
   <meta name="theme-color" content="#00416B" />
@@ -23,62 +29,92 @@
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/favicon.ico" />
 
-  <!-- Open Graph — Facebook, WhatsApp, LinkedIn -->
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_MX" />
-  <meta property="og:site_name" content="Skilled Proyectos Industriales" />
-  <meta property="og:url" content="https://www.skilled.mx/" />
-  <meta property="og:title" content="Skilled Proyectos Industriales | Ingeniería Eléctrica — Puebla" />
-  <meta property="og:description"
-    content="Soluciones integrales en ingeniería eléctrica, automatización PLC y proyectos llave en mano para la industria automotriz y manufacturera en México." />
-  <meta property="og:image" content="https://www.skilled.mx/og-image.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Skilled Proyectos Industriales — Ingeniería eléctrica e industrial" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Skilled Proyectos Industriales | Ingeniería Eléctrica — Puebla" />
-  <meta name="twitter:description"
-    content="Soluciones en ingeniería eléctrica, automatización PLC y proyectos llave en mano para la industria en México." />
-  <meta name="twitter:image" content="https://www.skilled.mx/og-image.png" />
-
-  <!-- JSON-LD: Datos estructurados para Google -->
+  <!-- JSON-LD: Datos estructurados para Google y motores de IA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Skilled Proyectos Industriales",
-    "description": "Empresa de ingeniería eléctrica, automatización PLC, redes industriales y proyectos llave en mano en Puebla, México.",
-    "url": "https://www.skilled.mx",
-    "telephone": "+52-222-639-07-40",
-    "email": "Proyectos@skilled.mx",
-    "foundingDate": "2019",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Calle Álamos No.29 Int. 5, Sanctorum Cuautlancingo",
-      "addressLocality": "Puebla",
-      "addressRegion": "Puebla",
-      "addressCountry": "MX"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "19.0760",
-      "longitude": "-98.2321"
-    },
-    "areaServed": "México",
-    "serviceType": [
-      "Ingeniería Eléctrica",
-      "Automatización Industrial",
-      "Programación PLC",
-      "Proyectos Llave en Mano",
-      "Redes Industriales",
-      "Diagramas Eléctricos"
-    ],
-    "sameAs": [
-      "https://www.facebook.com/profile.php?id=61571232704026",
-      "https://www.instagram.com/skilled_proyectos/",
-      "https://www.linkedin.com/company/skilled-proyectos-industriales/"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.skilled.mx/#organization",
+        "name": "Skilled Proyectos Industriales",
+        "alternateName": "Skilled",
+        "url": "https://www.skilled.mx/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.skilled.mx/og-image.png",
+          "width": 1200,
+          "height": 630
+        },
+        "image": "https://www.skilled.mx/og-image.png",
+        "description": "Empresa mexicana especializada en automatización industrial, soluciones eléctricas, programación PLC, integración de robots y líneas automatizadas para la industria automotriz y manufacturera.",
+        "email": "Proyectos@skilled.mx",
+        "telephone": "+52-222-639-07-40",
+        "foundingDate": "2019",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle Álamos No.29 Int. 5, Sanctorum Cuautlancingo",
+          "addressLocality": "Cuautlancingo",
+          "addressRegion": "Puebla",
+          "postalCode": "72730",
+          "addressCountry": "MX"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "México"
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61571232704026",
+          "https://www.instagram.com/skilled_proyectos/",
+          "https://www.linkedin.com/company/skilled-proyectos-industriales/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.skilled.mx/#website",
+        "url": "https://www.skilled.mx/",
+        "name": "Skilled Proyectos Industriales",
+        "inLanguage": "es-MX",
+        "publisher": { "@id": "https://www.skilled.mx/#organization" }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.skilled.mx/#service",
+        "name": "Skilled Proyectos Industriales",
+        "description": "Diseño, integración y puesta en marcha de sistemas eléctricos, PLC, robótica y líneas automatizadas para la industria automotriz y manufacturera en México.",
+        "url": "https://www.skilled.mx/",
+        "image": "https://www.skilled.mx/og-image.png",
+        "telephone": "+52-222-639-07-40",
+        "email": "Proyectos@skilled.mx",
+        "priceRange": "$$",
+        "parentOrganization": { "@id": "https://www.skilled.mx/#organization" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle Álamos No.29 Int. 5, Sanctorum Cuautlancingo",
+          "addressLocality": "Cuautlancingo",
+          "addressRegion": "Puebla",
+          "postalCode": "72730",
+          "addressCountry": "MX"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 19.0760,
+          "longitude": -98.2321
+        },
+        "areaServed": { "@type": "Country", "name": "México" },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Soluciones de automatización y eléctricas",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatización con PLC", "description": "Programación de controladores Siemens y Allen-Bradley para automatizar procesos productivos con control HMI/SCADA." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Integración de robots industriales", "description": "Instalación eléctrica e integración de celdas robóticas para líneas de producción." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tableros eléctricos y control", "description": "Diseño y fabricación de tableros de fuerza y control bajo normativa vigente." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Puesta en marcha de líneas automatizadas", "description": "Commissioning y arranque en sitio garantizando continuidad operativa." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mantenimiento y soporte técnico", "description": "Mantenimiento preventivo, correctivo y modernización (retrofit) de equipos industriales." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Soluciones para armadoras automotrices", "description": "Integración eléctrica y robótica para plantas e integradores del sector automotriz." } }
+          ]
+        }
+      }
     ]
   }
   </script>
