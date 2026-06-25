@@ -1,14 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-
-const stats = [
-  { value: '7', label: 'Años de operación' },
-  { value: '300+', label: 'Proyectos ejecutados' },
-  { value: '6', label: 'Estados del país' },
-  { value: '100%', label: 'Llave en mano' },
-];
+import { ArrowRight, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   const videoRef = useRef(null);
@@ -35,7 +28,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative flex items-center min-h-screen overflow-hidden bg-[#041527] pt-24 pb-16">
+    <section className="relative flex flex-col min-h-screen overflow-hidden bg-[#041527] pt-24 pb-8">
       {/* Background video */}
       <video
         ref={videoRef}
@@ -53,7 +46,8 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-[#041527] via-[#041527]/90 to-[#041527]/40" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#041527] via-transparent to-[#041527]/60" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div className="flex-grow flex items-center w-full relative z-10">
+       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
@@ -94,25 +88,34 @@ const Hero = () => {
               Ver soluciones
             </Link>
           </motion.div>
-
-          {/* Stats bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.44 }}
-            className="mt-16 pt-8 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl mx-auto"
-          >
-            {stats.map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center gap-1.5">
-                <span className="text-3xl font-black text-white">{stat.value}</span>
-                <span className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </motion.div>
         </div>
+       </div>
       </div>
+
+      {/* Indicador de scroll (solo escritorio) */}
+      <motion.a
+        href="#servicios"
+        aria-label="Desplazarse hacia abajo"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 1.1 }}
+        className="hidden lg:flex relative z-20 self-center mt-6 flex-shrink-0 flex-col items-center gap-2 text-white/70 hover:text-white transition-colors"
+      >
+        <span className="text-[10px] uppercase tracking-[0.22em] font-bold">Desliza</span>
+        <span className="flex items-start justify-center w-6 h-10 rounded-full border-2 border-white/40 p-1.5">
+          <motion.span
+            className="block w-1 h-1.5 rounded-full bg-white"
+            animate={{ y: [0, 12, 0], opacity: [1, 0.2, 1] }}
+            transition={{ duration: 1.6, ease: 'easeInOut', repeat: Infinity }}
+          />
+        </span>
+        <motion.span
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 1.6, ease: 'easeInOut', repeat: Infinity }}
+        >
+          <ChevronDown size={18} strokeWidth={2.5} />
+        </motion.span>
+      </motion.a>
     </section>
   );
 };

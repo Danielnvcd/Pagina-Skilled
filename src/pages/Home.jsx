@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Seo from '../components/Seo';
 import Hero from '../sections/Hero';
+import Stats from '../sections/Stats';
 import CoreServices from '../sections/CoreServices';
 import Trust from '../sections/Trust';
 import Methodology from '../sections/Methodology';
@@ -32,6 +33,7 @@ const Home = () => {
         description="Automatización industrial, soluciones eléctricas, PLC, robótica y líneas automatizadas para la industria automotriz y manufacturera en México. Proyectos llave en mano con clientes como Volkswagen, Ford, Daimler y Stellantis."
       />
       <Hero />
+      <Stats />
       <CoreServices />
       <Trust />
       <Methodology />
