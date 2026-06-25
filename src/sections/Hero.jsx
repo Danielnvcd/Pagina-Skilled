@@ -99,7 +99,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 1.1 }}
-        className="hidden lg:flex relative z-20 self-center mt-6 flex-shrink-0 flex-col items-center gap-2 text-white/70 hover:text-white transition-colors"
+        className="flex relative z-20 self-center mt-6 flex-shrink-0 flex-col items-center gap-2 text-white/70 hover:text-white transition-colors"
       >
         <span className="text-[10px] uppercase tracking-[0.22em] font-bold">Desliza</span>
         <span className="flex items-start justify-center w-6 h-10 rounded-full border-2 border-white/40 p-1.5">
