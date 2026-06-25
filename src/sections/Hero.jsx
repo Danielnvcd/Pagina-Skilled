@@ -28,7 +28,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative flex flex-col min-h-screen overflow-hidden bg-[#041527] pt-24 pb-8">
+    <section className="relative flex flex-col min-h-screen !min-h-[100dvh] overflow-hidden bg-[#041527] pt-24 pb-8">
       {/* Background video */}
       <video
         ref={videoRef}
