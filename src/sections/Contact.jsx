@@ -4,7 +4,7 @@ import { data } from '../data/content';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
 import PrivacyModal from '../components/PrivacyModal';
-import { Send, PhoneCall, UserCog } from 'lucide-react';
+import { Mail, PhoneCall, UserCog } from 'lucide-react';
 
 const Contact = () => {
   const [privacyOpen, setPrivacyOpen] = useState(false);
@@ -38,7 +38,7 @@ const Contact = () => {
                     <span className="text-xs font-black text-accent-red uppercase tracking-widest block mb-4">{person.position}</span>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-sm text-slate-600 font-medium">
                       <a href={`mailto:${person.email}`} className="flex items-center gap-2 hover:text-primary-blue transition-colors">
-                        <Send size={16} className="text-slate-400 group-hover:text-primary-blue transition-colors" /> {person.email}
+                        <Mail size={16} className="text-slate-400 group-hover:text-primary-blue transition-colors" /> {person.email}
                       </a>
                       {person.phone && (
                         <>
