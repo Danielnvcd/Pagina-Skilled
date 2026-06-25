@@ -1,4 +1,4 @@
-import { CarFront, Factory, Boxes, Activity } from 'lucide-react';
+import { CarFront, Factory, Network, Activity } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
 
 const Industries = () => {
@@ -14,15 +14,15 @@ const Industries = () => {
       id: 'manufactura',
       name: 'Manufactura',
       desc: 'Modernización de maquinaria (retrofit), control de motores y optimización de OEE en plantas de producción continua.',
-      img: '/sectores/manufactura.jpg',
+      img: '/sectores/indus.webp',
       icon: Factory
     },
     {
-      id: 'ensamble',
-      name: 'Ensamble',
-      desc: 'Integración eléctrica y robótica de estaciones de ensamble, sistemas de transporte y sistemas Andon de seguimiento.',
+      id: 'redes',
+      name: 'Redes, Voz y Datos',
+      desc: 'Diseño e instalación de redes industriales: fibra óptica, cableado estructurado e integración de PLCs y SCADA.',
       img: '/sectores/redes.jpg',
-      icon: Boxes
+      icon: Network
     },
     {
       id: 'procesos',
@@ -36,7 +36,7 @@ const Industries = () => {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle 
+        <SectionTitle
           subtitle="Sectores de Especialidad"
           title="Industrias que Atendemos"
           centered
@@ -49,9 +49,9 @@ const Industries = () => {
               <div key={sector.id} className="flex flex-col lg:px-8 first:lg:pl-0 last:lg:pr-0">
                 {/* Image */}
                 <div className="relative h-44 overflow-hidden mb-6">
-                  <img 
-                    src={sector.img} 
-                    alt={sector.name} 
+                  <img
+                    src={sector.img}
+                    alt={sector.name}
                     className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
                     onError={(e) => {
                       e.target.style.display = 'none';
