@@ -1,33 +1,33 @@
-import { CarFront, Factory, ServerCog, Activity } from 'lucide-react';
+import { CarFront, Factory, Boxes, Activity } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
 
 const Industries = () => {
   const sectors = [
     {
       id: 'automotriz',
-      name: 'Automotriz y Autopartes',
-      desc: 'Automatización de líneas de ensamble, celdas robóticas y control de calidad bajo estrictos estándares de la industria.',
+      name: 'Automotriz',
+      desc: 'Automatización de líneas de pintura y ensamble, celdas robóticas y control de calidad para armadoras e integradores.',
       img: '/sectores/automotriz.jpg',
       icon: CarFront
     },
     {
       id: 'manufactura',
-      name: 'Manufactura Avanzada',
-      desc: 'Modernización de maquinaria (Retrofit), control de motores y optimización de OEE en plantas de producción continua.',
+      name: 'Manufactura',
+      desc: 'Modernización de maquinaria (retrofit), control de motores y optimización de OEE en plantas de producción continua.',
       img: '/sectores/manufactura.jpg',
       icon: Factory
     },
     {
-      id: 'redes',
-      name: 'Redes Industriales',
-      desc: 'Diseño e implementación de topologías robustas, tendido de fibra óptica y certificación de nodos de control (Profinet, Ethernet/IP).',
+      id: 'ensamble',
+      name: 'Ensamble',
+      desc: 'Integración eléctrica y robótica de estaciones de ensamble, sistemas de transporte y sistemas Andon de seguimiento.',
       img: '/sectores/redes.jpg',
-      icon: ServerCog
+      icon: Boxes
     },
     {
-      id: 'energia',
-      name: 'Energía y Facilidades',
-      desc: 'Sistemas de monitoreo de energía (SCADA), cuartos de control y automatización de subestaciones y servicios auxiliares.',
+      id: 'procesos',
+      name: 'Procesos industriales',
+      desc: 'Control y monitoreo de procesos (SCADA), instrumentación, cuartos de control y automatización de servicios auxiliares.',
       img: '/sectores/energia.jpg',
       icon: Activity
     }

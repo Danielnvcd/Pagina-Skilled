@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Hero from '../sections/Hero';
-import SISH from '../sections/SISH';
+import CoreServices from '../sections/CoreServices';
+import Trust from '../sections/Trust';
 import Methodology from '../sections/Methodology';
 import Industries from '../sections/Industries';
 import Clients from '../sections/Clients';
+import FinalCTA from '../sections/FinalCTA';
 import Contact from '../sections/Contact';
 
 const Home = () => {
@@ -26,10 +28,12 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <SISH />
+      <CoreServices />
+      <Trust />
       <Methodology />
       <Industries />
       <Clients />
+      <FinalCTA />
       <Contact />
     </>
   );
