@@ -54,15 +54,6 @@ const Hero = () => {
 
   return (
     <section className="relative flex flex-col min-h-screen !min-h-[100dvh] overflow-hidden bg-[#041527] pt-24 pb-8">
-      {/* Capa de póster permanente: pinta al instante (LCP) y se queda detrás del
-          vídeo para que nunca haya un hueco visible mientras el vídeo arranca o
-          se pausa fuera de pantalla. */}
-      <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center opacity-40"
-        style={{ backgroundImage: 'url(/hero-poster.webp)' }}
-        aria-hidden="true"
-      />
-
       {/* Background video: carga diferida (preload="none" + arranque en idle,
           ver useEffect). WebM (VP9) primero por mejor compresión; MP4 como
           respaldo (Safari). Aparece con fade-in solo cuando ya reproduce
