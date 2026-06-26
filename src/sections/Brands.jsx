@@ -48,7 +48,7 @@ const Brands = () => {
                 {cat.logos.map((logo) => (
                   <div
                     key={logo.name}
-                    className="w-10 h-10 bg-white border border-slate-200 rounded-sm flex items-center justify-center p-1.5"
+                    className="w-16 h-16 md:w-10 md:h-10 bg-white border border-slate-200 rounded-sm flex items-center justify-center p-1.5"
                   >
                     <img
                       src={logo.src}
@@ -76,11 +76,11 @@ const Brands = () => {
             }}
           >
             {[...data.brands, ...data.brands].map((brand, index) => (
-              <div key={index} className="px-10 min-w-[220px] flex justify-center items-center h-20 group">
-                <img 
-                  src={brand.logo} 
-                  alt={brand.name} 
-                  className="max-h-12 md:max-h-16 max-w-[160px] object-contain transition-all duration-500 cursor-pointer"
+              <div key={index} className="px-5 md:px-10 min-w-[120px] md:min-w-[220px] flex justify-center items-center h-16 md:h-20 group">
+                <img
+                  src={brand.logo}
+                  alt={brand.name}
+                  className="max-h-8 md:max-h-16 max-w-[90px] md:max-w-[160px] object-contain transition-all duration-500 cursor-pointer"
                   onError={(e) => {
                     e.target.style.display = 'none';
                     e.target.nextSibling.style.display = 'flex';
