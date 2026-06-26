@@ -1,12 +1,20 @@
 import { m } from 'framer-motion';
-import { PlugZap, Factory, BrainCircuit, Settings2, ServerCog, BadgeCheck, Medal, ChevronRight } from 'lucide-react';
+import { PlugZap, Workflow, CircuitBoard, Cpu, Network, Boxes, Medal, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { data } from '../data/content';
 
-const ICONS = [PlugZap, Factory, BrainCircuit, Settings2, ServerCog, BadgeCheck];
+// Icono por id de servicio para que coincida con su contenido.
+const ICONS = {
+  SIE: PlugZap,        // Infraestructura Eléctrica
+  IPS: Workflow,       // Integración / proyectos llave en mano (pipeline)
+  SIE_ING: CircuitBoard, // Ingeniería Eléctrica (tableros, tensión)
+  SISH: Cpu,           // Ingeniería SW/HW (PLC, programación)
+  RVD: Network,        // Redes, Voz y Datos
+  SMG: Boxes,          // Suministro de materiales
+};
 
-const ServiceCard = ({ service, index }) => {
-  const Icon = ICONS[index];
+const ServiceCard = ({ service }) => {
+  const Icon = ICONS[service.id] || PlugZap;
   const items = service.highlights
     ? service.highlights.slice(0, 3)
     : service.pipeline
@@ -133,8 +141,8 @@ const Services = () => (
 
       {/* Cards grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {data.services.map((service, i) => (
-          <ServiceCard key={service.id} service={service} index={i} />
+        {data.services.map((service) => (
+          <ServiceCard key={service.id} service={service} />
         ))}
       </div>
 

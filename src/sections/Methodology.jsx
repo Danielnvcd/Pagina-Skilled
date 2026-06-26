@@ -1,25 +1,21 @@
-import { Shield, ClipboardList, PencilRuler, ListChecks } from 'lucide-react';
+import { Shield } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
 
 const Methodology = () => {
   const steps = [
     {
-      icon: ClipboardList,
       title: '1. Levantamiento y Diagnóstico',
       desc: 'Inspección técnica en planta, evaluación de infraestructura existente y levantamiento de requerimientos bajo normativas de seguridad (NOM/OSHA).',
     },
     {
-      icon: PencilRuler,
       title: '2. Ingeniería de Detalle',
       desc: 'Diseño de diagramas eléctricos (ePLAN/AutoCAD) y arquitectura de control. Selección rigurosa de componentes (Siemens, Allen-Bradley).',
     },
     {
-      icon: ListChecks,
       title: '3. Integración y Ejecución',
       desc: 'Programación de PLC/HMI, ensamble de tableros y despliegue en sitio garantizando cero tiempos de inactividad no programados (Zero Downtime).',
     },
     {
-      icon: Shield,
       title: '4. Commissioning y Soporte',
       desc: 'Puesta en marcha, pruebas de lazo (loop checks), entrega de planos "As-Built" y pólizas de mantenimiento preventivo/correctivo.',
     }
@@ -36,26 +32,22 @@ const Methodology = () => {
         />
         
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0 lg:divide-x divide-slate-200">
-          {steps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <div 
-                key={index} 
-                className="flex flex-col h-full lg:px-8 first:lg:pl-0 last:lg:pr-0"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-1 h-8 bg-primary-blue rounded-full flex-shrink-0"></div>
-                  <Icon size={22} className="text-primary-blue flex-shrink-0" />
-                </div>
-                <h3 className="text-base font-bold text-slate-900 mb-3 tracking-tight">
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className="flex flex-col h-full lg:px-8 first:lg:pl-0 last:lg:pr-0"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-1 h-8 bg-primary-blue rounded-full flex-shrink-0"></div>
+                <h3 className="text-base font-bold text-slate-900 tracking-tight">
                   {step.title}
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed flex-grow">
-                  {step.desc}
-                </p>
               </div>
-            );
-          })}
+              <p className="text-sm text-slate-600 leading-relaxed flex-grow">
+                {step.desc}
+              </p>
+            </div>
+          ))}
         </div>
 
         {/* Corporate Commitment Banner */}

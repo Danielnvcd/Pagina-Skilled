@@ -1,14 +1,23 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { m } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   const videoRef = useRef(null);
+  // El vídeo arranca invisible y solo se revela cuando ya hay fotogramas
+  // decodificados ('playing'). Mientras tanto se ve el póster de fondo, que es
+  // una capa permanente detrás. Así se elimina el parpadeo de la primera
+  // entrada: antes el navegador descartaba el póster del <video> al empezar a
+  // reproducir y mostraba un fotograma vacío/negro hasta decodificar el primero.
+  const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
     const node = videoRef.current;
     if (!node) return;
+
+    const reveal = () => setVideoReady(true);
+    node.addEventListener('playing', reveal);
 
     let observer;
     const start = () => {
@@ -38,23 +47,33 @@ const Hero = () => {
 
     return () => {
       cancel(id);
+      node.removeEventListener('playing', reveal);
       if (observer) observer.unobserve(node);
     };
   }, []);
 
   return (
     <section className="relative flex flex-col min-h-screen !min-h-[100dvh] overflow-hidden bg-[#041527] pt-24 pb-8">
-      {/* Background video: póster ligero para pintar al instante (LCP) y carga
-          diferida del vídeo (preload="none" + arranque en idle, ver useEffect).
-          WebM (VP9) primero por mejor compresión; MP4 como respaldo (Safari). */}
+      {/* Capa de póster permanente: pinta al instante (LCP) y se queda detrás del
+          vídeo para que nunca haya un hueco visible mientras el vídeo arranca o
+          se pausa fuera de pantalla. */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center opacity-40"
+        style={{ backgroundImage: 'url(/hero-poster.webp)' }}
+        aria-hidden="true"
+      />
+
+      {/* Background video: carga diferida (preload="none" + arranque en idle,
+          ver useEffect). WebM (VP9) primero por mejor compresión; MP4 como
+          respaldo (Safari). Aparece con fade-in solo cuando ya reproduce
+          ('playing'), evitando el parpadeo de la primera entrada en móvil. */}
       <video
         ref={videoRef}
         muted
         loop
         playsInline
         preload="none"
-        poster="/hero-poster.webp"
-        className="absolute inset-0 w-full h-full object-cover opacity-40"
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${videoReady ? 'opacity-40' : 'opacity-0'}`}
         aria-hidden="true"
       >
         <source src="/hero-bg.webm" type="video/webm" />

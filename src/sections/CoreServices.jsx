@@ -1,41 +1,35 @@
 import { m } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Cpu, Bot, LayoutGrid, Workflow, Wrench, CarFront, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
 
 const services = [
   {
-    icon: Cpu,
     title: 'Automatización con PLC',
     desc: 'Programación de controladores Siemens y Allen-Bradley para automatizar procesos productivos con lógica robusta y control HMI/SCADA.',
     image: '/servicios/software-hardware.webp',
   },
   {
-    icon: Bot,
     title: 'Integración de robots industriales',
     desc: 'Instalación eléctrica e integración de celdas robóticas para aplicación de pintura, sello y manipulación en líneas de producción.',
     image: '/servicios/integracion.webp',
   },
   {
-    icon: LayoutGrid,
     title: 'Tableros eléctricos y control',
     desc: 'Diseño y fabricación a medida de tableros de fuerza y control, sistemas de protección y puesta a tierra bajo normativa vigente.',
     image: '/servicios/ingenieria.webp',
   },
   {
-    icon: Workflow,
     title: 'Puesta en marcha de líneas automatizadas',
     desc: 'Commissioning, pruebas de lazo y arranque en sitio garantizando continuidad operativa y cero tiempos muertos no programados.',
     image: '/servicios/infraestructura.webp',
   },
   {
-    icon: Wrench,
     title: 'Mantenimiento y soporte técnico',
     desc: 'Mantenimiento preventivo y correctivo, diagnóstico y modernización (retrofit) de equipos e instalaciones industriales.',
     image: '/servicios/redes.webp',
   },
   {
-    icon: CarFront,
     title: 'Soluciones para armadoras automotrices',
     desc: 'Experiencia comprobada con plantas e integradores de la industria automotriz: Ford, Volkswagen, Daimler, Stellantis y Dürr.',
     image: '/sectores/automotriz.webp',
@@ -70,7 +64,7 @@ const CoreServices = () => {
           transition={{ staggerChildren: 0.08 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-200 border border-slate-200"
         >
-          {services.map(({ icon: Icon, title, desc, image }) => (
+          {services.map(({ title, desc, image }) => (
             <m.article
               key={title}
               variants={cardVariants}
@@ -85,9 +79,6 @@ const CoreServices = () => {
                   onError={(e) => { e.target.style.display = 'none'; }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-blue/70 via-primary-blue/10 to-transparent" />
-                <div className="absolute bottom-4 left-8 w-11 h-11 rounded-sm bg-white flex items-center justify-center text-primary-blue shadow-md">
-                  <Icon size={22} strokeWidth={1.75} />
-                </div>
               </div>
 
               <h3 className="text-lg font-bold text-slate-900 mb-3 tracking-tight pr-6">

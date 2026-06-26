@@ -40,10 +40,10 @@ const History = () => {
 
             <div className="flex flex-col gap-6 flex-grow justify-center">
               {/* Misión */}
-              <div className="bg-white p-6 lg:p-8 shadow-sm border border-slate-200/60 hover:shadow-md transition-shadow duration-300 relative overflow-hidden">
+              <div className="bg-white p-6 lg:p-8 shadow-sm border border-slate-200/60 hover:shadow-md transition-shadow duration-300 relative overflow-hidden border-l-4 border-l-primary-blue">
                 <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-6 text-center sm:text-left">
-                  <div className="w-14 h-14 shrink-0 rounded-xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-primary-blue">
-                    <Icons.Target size={28} strokeWidth={1.5} />
+                  <div className="w-14 h-14 shrink-0 border border-blue-100 bg-blue-50/60 flex items-center justify-center text-primary-blue font-black text-xl tracking-tight tabular-nums">
+                    01
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-slate-900 mb-2 uppercase tracking-wider text-sm">Nuestra Misión</h3>
@@ -55,10 +55,10 @@ const History = () => {
               </div>
 
               {/* Visión */}
-              <div className="bg-white p-6 lg:p-8 shadow-sm border border-slate-200/60 hover:shadow-md transition-shadow duration-300 relative overflow-hidden">
+              <div className="bg-white p-6 lg:p-8 shadow-sm border border-slate-200/60 hover:shadow-md transition-shadow duration-300 relative overflow-hidden border-l-4 border-l-accent-red">
                 <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-6 text-center sm:text-left">
-                  <div className="w-14 h-14 shrink-0 rounded-xl bg-red-50/80 border border-red-100 flex items-center justify-center text-accent-red">
-                    <Icons.Eye size={28} strokeWidth={1.5} />
+                  <div className="w-14 h-14 shrink-0 border border-red-100 bg-red-50/60 flex items-center justify-center text-accent-red font-black text-xl tracking-tight tabular-nums">
+                    02
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-slate-900 mb-2 uppercase tracking-wider text-sm">Nuestra Visión</h3>
@@ -120,8 +120,8 @@ const History = () => {
               const iconsList = [
                 <Icons.Crosshair size={36} strokeWidth={1.5} />,
                 <Icons.ShieldCheck size={36} strokeWidth={1.5} />,
-                <Icons.Activity size={36} strokeWidth={1.5} />,
-                <Icons.Cpu size={36} strokeWidth={1.5} />,
+                <Icons.Infinity size={36} strokeWidth={1.5} />,
+                <Icons.Lightbulb size={36} strokeWidth={1.5} />,
                 <Icons.Scale size={36} strokeWidth={1.5} />
               ];
               const IconComp = iconsList[index % iconsList.length];
