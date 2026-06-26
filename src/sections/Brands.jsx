@@ -6,7 +6,7 @@ const Brands = () => {
   return (
     <section id="proveedores" className="bg-white border-b border-slate-100 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <SectionTitle title="Socios Tecnológicos" subtitle="Calidad Garantizada" centered={true} />
+        <SectionTitle title="Nuestros Proveedores" subtitle="Calidad Garantizada" centered={true} />
         
         <p className="text-slate-600 mb-16 max-w-3xl mx-auto text-lg leading-relaxed">
           Integramos tecnología de vanguardia mediante el suministro de componentes de las marcas líderes en el sector industrial a nivel global.
@@ -48,7 +48,7 @@ const Brands = () => {
                 {cat.logos.map((logo) => (
                   <div
                     key={logo.name}
-                    className="w-16 h-16 md:w-10 md:h-10 bg-white border border-slate-200 rounded-sm flex items-center justify-center p-1.5"
+                    className="w-16 h-16 md:w-14 md:h-14 bg-white border border-slate-200 rounded-sm flex items-center justify-center p-1.5"
                   >
                     <img
                       src={logo.src}
