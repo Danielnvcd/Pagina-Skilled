@@ -10,35 +10,51 @@ const Hero = () => {
     const node = videoRef.current;
     if (!node) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          // Reinicia y reproduce una sola vez al volver al Hero
-          node.currentTime = 0;
-          node.play().catch(() => { });
-        } else {
-          node.pause();
-        }
-      },
-      { threshold: 0.2 }
-    );
+    let observer;
+    const start = () => {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            // Reinicia y reproduce al volver al Hero. preload="none" hace que
+            // los bytes del vídeo se descarguen recién aquí (no en la carga).
+            node.currentTime = 0;
+            node.play().catch(() => { });
+          } else {
+            node.pause();
+          }
+        },
+        { threshold: 0.2 }
+      );
+      observer.observe(node);
+    };
 
-    observer.observe(node);
-    return () => observer.unobserve(node);
+    // Diferimos el arranque hasta que el navegador esté inactivo para que la
+    // descarga del vídeo no compita con el LCP (el póster ya se ve al instante).
+    const ric = window.requestIdleCallback || ((cb) => setTimeout(cb, 1500));
+    const cancel = window.cancelIdleCallback || clearTimeout;
+    const id = ric(start);
+
+    return () => {
+      cancel(id);
+      if (observer) observer.unobserve(node);
+    };
   }, []);
 
   return (
     <section className="relative flex flex-col min-h-screen !min-h-[100dvh] overflow-hidden bg-[#041527] pt-24 pb-8">
-      {/* Background video */}
+      {/* Background video: póster ligero para pintar al instante (LCP) y carga
+          diferida del vídeo (preload="none" + arranque en idle, ver useEffect).
+          WebM (VP9) primero por mejor compresión; MP4 como respaldo (Safari). */}
       <video
         ref={videoRef}
-        autoPlay
         muted
         playsInline
-        preload="auto"
+        preload="none"
+        poster="/hero-poster.webp"
         className="absolute inset-0 w-full h-full object-cover opacity-40"
         aria-hidden="true"
       >
+        <source src="/hero-bg.webm" type="video/webm" />
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
 
