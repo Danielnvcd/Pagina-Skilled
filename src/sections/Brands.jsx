@@ -1,5 +1,4 @@
 import { m } from 'framer-motion';
-import { Cpu, PlugZap, Cable, Route } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
 import { data } from '../data/content';
 
@@ -16,12 +15,25 @@ const Brands = () => {
         {/* Brand categories - Corporate Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {[
-            { label: 'Automatización Industrial', brands: 'ABB, Siemens, Eaton', icon: Cpu },
-            { label: 'Conectividad y Protección', brands: 'Phoenix Contact, Weidmüller', icon: PlugZap },
-            { label: 'Cables y Conductores', brands: 'Helukabel, LAPP Group, Ascable', icon: Cable },
-            { label: 'Canalización Eléctrica', brands: 'Charofil, Viakon', icon: Route },
+            { label: 'Automatización Industrial', logos: [
+              { name: 'ABB', src: '/proveedores/abb.webp' },
+              { name: 'Siemens', src: '/proveedores/siemens.png' },
+              { name: 'Eaton', src: '/proveedores/eaton.webp' },
+            ] },
+            { label: 'Conectividad y Protección', logos: [
+              { name: 'Phoenix Contact', src: '/proveedores/phoenix.webp' },
+              { name: 'Weidmüller', src: '/proveedores/weidmuller.png' },
+            ] },
+            { label: 'Cables y Conductores', logos: [
+              { name: 'Helukabel', src: '/proveedores/helukabel.webp' },
+              { name: 'LAPP Group', src: '/proveedores/lapp.webp' },
+              { name: 'Ascable', src: '/proveedores/ascable.webp' },
+            ] },
+            { label: 'Canalización Eléctrica', logos: [
+              { name: 'Charofil', src: '/proveedores/charofil.webp' },
+              { name: 'Viakon', src: '/proveedores/viakon.webp' },
+            ] },
           ].map((cat, i) => {
-            const Icon = cat.icon;
             return (
             <m.div
               key={cat.label}
@@ -29,13 +41,24 @@ const Brands = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-white border border-slate-200 rounded-sm p-6 text-left hover:border-primary-blue transition-colors duration-300 group"
+              className="bg-white border border-slate-200 rounded-sm p-6 text-center hover:border-primary-blue transition-colors duration-300 group"
             >
-              <div className="w-10 h-10 bg-slate-50 border border-slate-200 rounded-sm flex items-center justify-center mb-4 group-hover:bg-primary-blue group-hover:border-primary-blue transition-colors duration-300">
-                <Icon className="w-5 h-5 text-primary-blue group-hover:text-white transition-colors duration-300" strokeWidth={2} />
+              <h3 className="text-sm font-bold text-slate-900 mb-4">{cat.label}</h3>
+              <div className="flex flex-wrap items-center justify-center gap-2">
+                {cat.logos.map((logo) => (
+                  <div
+                    key={logo.name}
+                    className="w-10 h-10 bg-white border border-slate-200 rounded-sm flex items-center justify-center p-1.5"
+                  >
+                    <img
+                      src={logo.src}
+                      alt={logo.name}
+                      title={logo.name}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                ))}
               </div>
-              <h3 className="text-sm font-bold text-slate-900 mb-2">{cat.label}</h3>
-              <p className="text-xs text-slate-500 leading-relaxed">{cat.brands}</p>
             </m.div>
             );
           })}
