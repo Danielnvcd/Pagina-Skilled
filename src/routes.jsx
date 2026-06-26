@@ -12,7 +12,6 @@ export const routes = [
     children: [
       { index: true, element: <Home /> },
       { path: 'servicios', lazy: async () => ({ Component: (await import('./pages/ServicesPage')).default }) },
-      { path: 'proyectos', lazy: async () => ({ Component: (await import('./pages/ProjectsPage')).default }) },
       { path: 'proveedores', lazy: async () => ({ Component: (await import('./pages/ProvidersPage')).default }) },
       { path: 'historia', lazy: async () => ({ Component: (await import('./pages/HistoryPage')).default }) },
     ],

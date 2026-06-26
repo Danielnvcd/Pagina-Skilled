@@ -121,7 +121,8 @@ export const data = {
     { name: "Tenneco", logo: "/proveedores/tenneco.webp" },
     { name: "Volkswagen", logo: "/proveedores/vwm.webp" },
     { name: "Daimler", logo: "/proveedores/Daimler.svg" },
-    { name: "Dürr AG", logo: "/proveedores/Dürr_AG_logo.svg.png" }
+    { name: "Dürr AG", logo: "/proveedores/Dürr_AG_logo.svg.png" },
+    { name: "BMW", logo: "/proveedores/bmw.webp" }
   ],
 
   stats: {

@@ -10,7 +10,8 @@ const Clients = () => {
         <SectionTitle title="Empresas que confían en nosotros" subtitle="Nuestros Clientes" centered={true} />
 
         <div className="mt-16">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+          {/* Celular/tablet: cuadrícula como antes. En PC (lg): una sola fila con todos los logos. */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
             {data.clients.map((client, index) => (
               <m.div
                 key={client.name}

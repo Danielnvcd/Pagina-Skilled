@@ -15,9 +15,11 @@ const Hero = () => {
       observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
-            // Reinicia y reproduce al volver al Hero. preload="none" hace que
-            // los bytes del vídeo se descarguen recién aquí (no en la carga).
-            node.currentTime = 0;
+            // Reanuda (no reinicia) la reproducción. Reiniciar currentTime a 0
+            // en cada entrada provocaba un salto al póster/primer fotograma —el
+            // parpadeo en móvil, donde la barra de direcciones cambia el alto y
+            // dispara el observer varias veces. El atributo loop mantiene el
+            // bucle sin congelarse al terminar.
             node.play().catch(() => { });
           } else {
             node.pause();
@@ -48,6 +50,7 @@ const Hero = () => {
       <video
         ref={videoRef}
         muted
+        loop
         playsInline
         preload="none"
         poster="/hero-poster.webp"
