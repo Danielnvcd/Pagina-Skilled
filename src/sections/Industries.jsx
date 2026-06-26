@@ -7,7 +7,7 @@ const Industries = () => {
       id: 'automotriz',
       name: 'Automotriz',
       desc: 'Automatización de líneas de pintura y ensamble, celdas robóticas y control de calidad para armadoras e integradores.',
-      img: '/sectores/automotriz.jpg',
+      img: '/sectores/automotriz.webp',
       icon: CarFront
     },
     {
@@ -21,7 +21,7 @@ const Industries = () => {
       id: 'redes',
       name: 'Redes, Voz y Datos',
       desc: 'Diseño e instalación de redes industriales: fibra óptica, cableado estructurado e integración de PLCs y SCADA.',
-      img: '/sectores/redes.jpg',
+      img: '/sectores/redes.webp',
       icon: Network
     },
     {

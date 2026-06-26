@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Cpu, Bot, LayoutGrid, Workflow, Wrench, CarFront, ArrowUpRight } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
@@ -8,37 +8,37 @@ const services = [
     icon: Cpu,
     title: 'Automatización con PLC',
     desc: 'Programación de controladores Siemens y Allen-Bradley para automatizar procesos productivos con lógica robusta y control HMI/SCADA.',
-    image: '/servicios/software-hardware.jpg',
+    image: '/servicios/software-hardware.webp',
   },
   {
     icon: Bot,
     title: 'Integración de robots industriales',
     desc: 'Instalación eléctrica e integración de celdas robóticas para aplicación de pintura, sello y manipulación en líneas de producción.',
-    image: '/servicios/integracion.jpg',
+    image: '/servicios/integracion.webp',
   },
   {
     icon: LayoutGrid,
     title: 'Tableros eléctricos y control',
     desc: 'Diseño y fabricación a medida de tableros de fuerza y control, sistemas de protección y puesta a tierra bajo normativa vigente.',
-    image: '/servicios/ingenieria.jpg',
+    image: '/servicios/ingenieria.webp',
   },
   {
     icon: Workflow,
     title: 'Puesta en marcha de líneas automatizadas',
     desc: 'Commissioning, pruebas de lazo y arranque en sitio garantizando continuidad operativa y cero tiempos muertos no programados.',
-    image: '/servicios/infraestructura.jpg',
+    image: '/servicios/infraestructura.webp',
   },
   {
     icon: Wrench,
     title: 'Mantenimiento y soporte técnico',
     desc: 'Mantenimiento preventivo y correctivo, diagnóstico y modernización (retrofit) de equipos e instalaciones industriales.',
-    image: '/servicios/redes.jpg',
+    image: '/servicios/redes.webp',
   },
   {
     icon: CarFront,
     title: 'Soluciones para armadoras automotrices',
     desc: 'Experiencia comprobada con plantas e integradores de la industria automotriz: Ford, Volkswagen, Daimler, Stellantis y Dürr.',
-    image: '/sectores/automotriz.jpg',
+    image: '/sectores/automotriz.webp',
   },
 ];
 
@@ -63,7 +63,7 @@ const CoreServices = () => {
           y continuidad operativa.
         </p>
 
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.15 }}
@@ -71,7 +71,7 @@ const CoreServices = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-200 border border-slate-200"
         >
           {services.map(({ icon: Icon, title, desc, image }) => (
-            <motion.article
+            <m.article
               key={title}
               variants={cardVariants}
               className="group relative bg-white p-8 flex flex-col transition-colors duration-300 hover:bg-slate-50"
@@ -100,9 +100,9 @@ const CoreServices = () => {
               <span className="absolute top-7 right-7 text-slate-300 group-hover:text-accent-red transition-colors duration-300">
                 <ArrowUpRight size={20} />
               </span>
-            </motion.article>
+            </m.article>
           ))}
-        </motion.div>
+        </m.div>
 
         <div className="mt-12 text-center">
           <Link

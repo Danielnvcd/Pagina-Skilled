@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import SectionTitle from '../components/SectionTitle';
 import { TerminalSquare, Cpu, GitBranch, MonitorSmartphone } from 'lucide-react';
 
@@ -27,7 +27,7 @@ const SISH = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 divide-y lg:divide-y-0 lg:divide-x divide-slate-200">
 
           {/* Bloque 1: Diagramas Eléctricos */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -42,14 +42,14 @@ const SISH = () => {
             {/* Plataformas */}
             <div className="mb-8">
               <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-5">Plataformas</p>
-              <motion.div
+              <m.div
                 variants={logoContainer}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.4 }}
                 className="flex items-end justify-center gap-10"
               >
-                <motion.div variants={logoItem} className="flex flex-col items-center gap-3">
+                <m.div variants={logoItem} className="flex flex-col items-center gap-3">
                   <img
                     src="/proveedores/autocad.png"
                     alt="AutoCAD"
@@ -57,8 +57,8 @@ const SISH = () => {
                     onError={(e) => { e.target.style.display = 'none'; }}
                   />
                   <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">AutoCAD</span>
-                </motion.div>
-                <motion.div variants={logoItem} className="flex flex-col items-center gap-3">
+                </m.div>
+                <m.div variants={logoItem} className="flex flex-col items-center gap-3">
                   <img
                     src="/proveedores/eplan.png"
                     alt="ePLAN"
@@ -66,8 +66,8 @@ const SISH = () => {
                     onError={(e) => { e.target.style.display = 'none'; }}
                   />
                   <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">ePLAN</span>
-                </motion.div>
-              </motion.div>
+                </m.div>
+              </m.div>
             </div>
 
             {/* Entregables */}
@@ -87,10 +87,10 @@ const SISH = () => {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Bloque 2: Programación PLC */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -105,22 +105,22 @@ const SISH = () => {
             {/* Plataformas */}
             <div className="mb-8">
               <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-5">Plataformas</p>
-              <motion.div
+              <m.div
                 variants={logoContainer}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.4 }}
                 className="flex items-end justify-center gap-10"
               >
-                <motion.div variants={logoItem} className="flex flex-col items-center gap-3">
-                  <img src="/proveedores/ab.png" alt="Allen-Bradley" className="h-12 w-auto object-contain" />
+                <m.div variants={logoItem} className="flex flex-col items-center gap-3">
+                  <img src="/proveedores/ab.webp" alt="Allen-Bradley" className="h-12 w-auto object-contain" />
                   <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Studio 5000</span>
-                </motion.div>
-                <motion.div variants={logoItem} className="flex flex-col items-center gap-3">
+                </m.div>
+                <m.div variants={logoItem} className="flex flex-col items-center gap-3">
                   <img src="/proveedores/siemens.png" alt="Siemens" className="h-12 w-auto object-contain" />
                   <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">TIA Portal</span>
-                </motion.div>
-              </motion.div>
+                </m.div>
+              </m.div>
             </div>
 
             {/* Capacidades */}
@@ -140,7 +140,7 @@ const SISH = () => {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
         </div>
       </div>

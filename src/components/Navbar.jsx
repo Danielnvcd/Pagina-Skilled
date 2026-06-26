@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Facebook, Instagram, Linkedin } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import Button from './Button';
-import logoImg from '../assets/images/logo.png';
+import logoImg from '../assets/images/logo.webp';
 
 const Navbar = () => {
   const location = useLocation();
@@ -44,7 +44,7 @@ const Navbar = () => {
   ];
 
   return (
-    <motion.header 
+    <m.header 
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -78,13 +78,13 @@ const Navbar = () => {
           ))}
           {/* Social Icons Desktop */}
           <div className="flex items-center space-x-3 border-l border-neutral-light pl-6">
-            <a href="https://www.facebook.com/profile.php?id=61571232704026" target="_blank" rel="noopener noreferrer" className={`transition-colors hover:text-accent-red ${scrolled ? 'text-primary-blue/70' : 'text-primary-blue/80'}`}>
+            <a aria-label="Skilled en Facebook" href="https://www.facebook.com/profile.php?id=61571232704026" target="_blank" rel="noopener noreferrer" className={`transition-colors hover:text-accent-red ${scrolled ? 'text-primary-blue/70' : 'text-primary-blue/80'}`}>
               <Facebook size={18} />
             </a>
-            <a href="https://www.instagram.com/skilled_proyectos/" target="_blank" rel="noopener noreferrer" className={`transition-colors hover:text-accent-red ${scrolled ? 'text-primary-blue/70' : 'text-primary-blue/80'}`}>
+            <a aria-label="Skilled en Instagram" href="https://www.instagram.com/skilled_proyectos/" target="_blank" rel="noopener noreferrer" className={`transition-colors hover:text-accent-red ${scrolled ? 'text-primary-blue/70' : 'text-primary-blue/80'}`}>
               <Instagram size={18} />
             </a>
-            <a href="https://www.linkedin.com/company/skilled-proyectos-industriales/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className={`transition-colors hover:text-accent-red ${scrolled ? 'text-primary-blue/70' : 'text-primary-blue/80'}`}>
+            <a aria-label="Skilled en LinkedIn" href="https://www.linkedin.com/company/skilled-proyectos-industriales/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className={`transition-colors hover:text-accent-red ${scrolled ? 'text-primary-blue/70' : 'text-primary-blue/80'}`}>
               <Linkedin size={18} />
             </a>
           </div>
@@ -95,8 +95,9 @@ const Navbar = () => {
 
         {/* Mobile Toggle */}
         <div className="md:hidden">
-          <button 
+          <button
             onClick={() => setMobileMenuOpen(true)}
+            aria-label="Abrir menú de navegación"
             className="p-2 text-primary-blue hover:text-accent-red transition-colors"
           >
             <Menu size={28}/>
@@ -109,7 +110,7 @@ const Navbar = () => {
         {mobileMenuOpen && (
           <>
             {/* Backdrop Overlay */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -119,7 +120,7 @@ const Navbar = () => {
             />
 
             {/* Side Drawer */}
-            <motion.div 
+            <m.div 
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
@@ -129,8 +130,9 @@ const Navbar = () => {
               {/* Drawer Header */}
               <div className="flex justify-between items-center p-5 border-b border-slate-100">
                 <img src={logoImg} alt="Skilled Logo" className="h-8 object-contain" />
-                <button 
+                <button
                   onClick={() => setMobileMenuOpen(false)}
+                  aria-label="Cerrar menú de navegación"
                   className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-400 hover:text-accent-red transition-colors rounded-full hover:bg-slate-50 active:bg-slate-100"
                 >
                   <X size={24} />
@@ -162,22 +164,22 @@ const Navbar = () => {
               <div className="p-8 bg-slate-50 mt-auto border-t border-slate-100">
                 <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest text-center mb-5">Síguenos</p>
                 <div className="flex justify-center gap-8">
-                  <a href="https://www.facebook.com/profile.php?id=61571232704026" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-accent-red hover:scale-110 transition-all">
+                  <a aria-label="Skilled en Facebook" href="https://www.facebook.com/profile.php?id=61571232704026" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-accent-red hover:scale-110 transition-all">
                     <Facebook size={24} />
                   </a>
-                  <a href="https://www.instagram.com/skilled_proyectos/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-accent-red hover:scale-110 transition-all">
+                  <a aria-label="Skilled en Instagram" href="https://www.instagram.com/skilled_proyectos/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-accent-red hover:scale-110 transition-all">
                     <Instagram size={24} />
                   </a>
-                  <a href="https://www.linkedin.com/company/skilled-proyectos-industriales/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-accent-red hover:scale-110 transition-all">
+                  <a aria-label="Skilled en LinkedIn" href="https://www.linkedin.com/company/skilled-proyectos-industriales/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-accent-red hover:scale-110 transition-all">
                     <Linkedin size={24} />
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           </>
         )}
       </AnimatePresence>
-    </motion.header>
+    </m.header>
   );
 };
 

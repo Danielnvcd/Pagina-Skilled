@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { PlugZap, Factory, BrainCircuit, Settings2, ServerCog, BadgeCheck, Medal, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { data } from '../data/content';
@@ -106,7 +106,7 @@ const Services = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
       {/* Section header */}
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
@@ -119,7 +119,7 @@ const Services = () => (
         <h2 className="text-3xl md:text-5xl font-black text-primary-blue leading-tight">
           Portafolio de Servicios
         </h2>
-        <motion.div
+        <m.div
           initial={{ width: 0 }}
           whileInView={{ width: '5rem' }}
           viewport={{ once: true, amount: 0.3 }}
@@ -129,7 +129,7 @@ const Services = () => (
         <p className="text-slate-600 text-base mt-5 max-w-2xl leading-relaxed">
           Soluciones integrales de ingeniería eléctrica, automatización y telecomunicaciones para la industria.
         </p>
-      </motion.div>
+      </m.div>
 
       {/* Cards grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

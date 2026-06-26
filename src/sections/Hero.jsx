@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 
@@ -49,16 +49,16 @@ const Hero = () => {
       <div className="flex-grow flex items-center w-full relative z-10">
        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl mx-auto text-center">
-          <motion.h1
+          <m.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
             className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08]"
           >
             Automatización industrial y soluciones eléctricas para la manufactura moderna
-          </motion.h1>
+          </m.h1>
 
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
@@ -66,9 +66,9 @@ const Hero = () => {
           >
             Diseñamos, integramos y ponemos en marcha sistemas eléctricos, PLC, robótica
             y líneas automatizadas para la industria automotriz y manufacturera en México.
-          </motion.p>
+          </m.p>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.32 }}
@@ -87,13 +87,13 @@ const Hero = () => {
             >
               Ver soluciones
             </Link>
-          </motion.div>
+          </m.div>
         </div>
        </div>
       </div>
 
       {/* Indicador de scroll (solo escritorio) */}
-      <motion.a
+      <m.a
         href="#servicios"
         aria-label="Desplazarse hacia abajo"
         initial={{ opacity: 0 }}
@@ -103,19 +103,19 @@ const Hero = () => {
       >
         <span className="text-[10px] uppercase tracking-[0.22em] font-bold">Desliza</span>
         <span className="flex items-start justify-center w-6 h-10 rounded-full border-2 border-white/40 p-1.5">
-          <motion.span
+          <m.span
             className="block w-1 h-1.5 rounded-full bg-white"
             animate={{ y: [0, 12, 0], opacity: [1, 0.2, 1] }}
             transition={{ duration: 1.6, ease: 'easeInOut', repeat: Infinity }}
           />
         </span>
-        <motion.span
+        <m.span
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 1.6, ease: 'easeInOut', repeat: Infinity }}
         >
           <ChevronDown size={18} strokeWidth={2.5} />
-        </motion.span>
-      </motion.a>
+        </m.span>
+      </m.a>
     </section>
   );
 };

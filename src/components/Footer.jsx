@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { data } from '../data/content';
 import { Mail, PhoneCall, MapPin, Linkedin, Facebook, Instagram } from 'lucide-react';
-import logoImg from '../assets/images/logo.png';
+import logoImg from '../assets/images/logo.webp';
 import PrivacyModal from './PrivacyModal';
 
 const Footer = () => {
   const [privacyOpen, setPrivacyOpen] = useState(false);
   return (
-    <motion.footer 
+    <m.footer 
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
@@ -34,13 +34,13 @@ const Footer = () => {
             <div>
               <strong className="block text-white mb-2 text-xs">Síguenos:</strong>
               <div className="flex gap-3">
-                <a href="https://www.facebook.com/profile.php?id=61571232704026" target="_blank" rel="noopener noreferrer" className="h-8 w-8 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-300 hover:bg-accent-red hover:text-white hover:border-accent-red transition-all shadow-sm">
+                <a aria-label="Skilled en Facebook" href="https://www.facebook.com/profile.php?id=61571232704026" target="_blank" rel="noopener noreferrer" className="h-8 w-8 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-300 hover:bg-accent-red hover:text-white hover:border-accent-red transition-all shadow-sm">
                   <Facebook size={14} />
                 </a>
-                <a href="https://www.instagram.com/skilled_proyectos/" target="_blank" rel="noopener noreferrer" className="h-8 w-8 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-300 hover:bg-accent-red hover:text-white hover:border-accent-red transition-all shadow-sm">
+                <a aria-label="Skilled en Instagram" href="https://www.instagram.com/skilled_proyectos/" target="_blank" rel="noopener noreferrer" className="h-8 w-8 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-300 hover:bg-accent-red hover:text-white hover:border-accent-red transition-all shadow-sm">
                   <Instagram size={14} />
                 </a>
-                <a href="https://www.linkedin.com/company/skilled-proyectos-industriales/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="h-8 w-8 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-300 hover:bg-accent-red hover:text-white hover:border-accent-red transition-all shadow-sm">
+                <a aria-label="Skilled en LinkedIn" href="https://www.linkedin.com/company/skilled-proyectos-industriales/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="h-8 w-8 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-slate-300 hover:bg-accent-red hover:text-white hover:border-accent-red transition-all shadow-sm">
                   <Linkedin size={14} />
                 </a>
               </div>
@@ -108,7 +108,7 @@ const Footer = () => {
       </div>
 
       <PrivacyModal open={privacyOpen} onClose={() => setPrivacyOpen(false)} />
-    </motion.footer>
+    </m.footer>
   );
 };
 

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 const stats = [
   { value: '7', label: 'Años de operación' },
@@ -13,7 +13,7 @@ const Stats = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10 lg:gap-0 lg:divide-x lg:divide-slate-200">
           {stats.map((stat, i) => (
-            <motion.div
+            <m.div
               key={stat.label}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ const Stats = () => {
               <span className="mt-3 text-[10px] sm:text-[11px] text-slate-500 uppercase tracking-widest font-bold leading-snug">
                 {stat.label}
               </span>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

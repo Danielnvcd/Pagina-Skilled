@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { data } from '../data/content';
 import SectionTitle from '../components/SectionTitle';
 import * as Icons from 'lucide-react';
-import portadaImg from '../assets/images/Portada.png';
+import portadaImg from '../assets/images/Portada.webp';
 
 const History = () => {
   const containerVariants = {
@@ -27,7 +27,7 @@ const History = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-24 lg:items-stretch">
           
           {/* Left Column: Text & Cards */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -69,10 +69,10 @@ const History = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Right Column: Image */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -99,7 +99,7 @@ const History = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Valores */}
@@ -109,7 +109,7 @@ const History = () => {
             <h2 className="text-3xl md:text-4xl font-black text-primary-blue">Pilares Operativos</h2>
           </div>
 
-          <motion.div
+          <m.div
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
@@ -127,16 +127,16 @@ const History = () => {
               const IconComp = iconsList[index % iconsList.length];
 
               return (
-                <motion.div key={index} variants={itemVariants} className="flex flex-col items-center text-center group">
+                <m.div key={index} variants={itemVariants} className="flex flex-col items-center text-center group">
                   <div className="text-slate-400 mb-6 group-hover:text-primary-blue transition-colors duration-300 transform group-hover:-translate-y-2">
                     {IconComp}
                   </div>
                   <h4 className="text-base font-bold text-slate-900 mb-3">{valor.title}</h4>
                   <p className="text-sm text-slate-500 leading-relaxed">{valor.description}</p>
-                </motion.div>
+                </m.div>
               );
             })}
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

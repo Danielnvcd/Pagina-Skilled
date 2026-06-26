@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import SectionTitle from '../components/SectionTitle';
 import { data } from '../data/content';
 
@@ -20,7 +20,7 @@ const Brands = () => {
             { label: 'Cables y Conductores', brands: 'Helukabel, LAPP Group, Ascable', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
             { label: 'Canalización Eléctrica', brands: 'Charofil, Viakon', icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10' },
           ].map((cat, i) => (
-            <motion.div 
+            <m.div 
               key={cat.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -35,13 +35,13 @@ const Brands = () => {
               </div>
               <h3 className="text-sm font-bold text-slate-900 mb-2">{cat.label}</h3>
               <p className="text-xs text-slate-500 leading-relaxed">{cat.brands}</p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 
         {/* Marquee Animation Container - Refined */}
         <div className="relative w-full overflow-hidden py-12 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-32 before:bg-gradient-to-r before:from-white before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-32 after:bg-gradient-to-l after:from-white after:to-transparent border-t border-slate-50">
-          <motion.div 
+          <m.div 
             className="flex w-max items-center justify-start"
             animate={{ x: ["0%", "-50%"] }}
             transition={{
@@ -67,7 +67,7 @@ const Brands = () => {
                 </div>
               </div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

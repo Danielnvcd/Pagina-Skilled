@@ -36,7 +36,7 @@ export const data = {
       id: "SIE",
       name: "SIE Infraestructura Eléctrica",
       description: "Servicios eléctricos especializados y soluciones integrales conforme a estándares y normativas vigentes.",
-      image: "/servicios/infraestructura.jpg",
+      image: "/servicios/infraestructura.webp",
       highlights: [
         { title: "Personal Calificado", desc: "Equipo técnico con amplia experiencia en proyectos industriales de alta complejidad." },
         { title: "Normativas Vigentes", desc: "Servicios bajo estándares nacionales e internacionales de calidad y seguridad (NOM, NFPA, NEC)." },
@@ -47,14 +47,14 @@ export const data = {
       id: "IPS",
       name: "IPS Integración de Proyectos y Servicios",
       description: "Proyectos 'Llave en Mano' integrando componentes mecánicos, eléctricos, hidráulicos y neumáticos con un ciclo completo de ejecución.",
-      image: "/servicios/integracion.jpg",
+      image: "/servicios/integracion.webp",
       pipeline: ["IDEA", "DISEÑO", "FABRICACIÓN", "TESTING", "PUESTA EN MARCHA", "ENTREGA & MANTTO."]
     },
     {
       id: "SIE_ING",
       name: "SIE Ingeniería Eléctrica",
       description: "Soluciones eléctricas industriales de media y baja tensión, fabricación de tableros y sistemas de protección.",
-      image: "/servicios/ingenieria.jpg",
+      image: "/servicios/ingenieria.webp",
       highlights: [
         { title: "Media y Baja Tensión", desc: "Instalaciones eléctricas especializadas para entornos industriales." },
         { title: "Iluminación Industrial", desc: "Diseño e instalación de sistemas eficientes y normados." },
@@ -66,7 +66,7 @@ export const data = {
       id: "SISH",
       name: "SISH Ingeniería SW/HW",
       description: "Diagramas eléctricos en AutoCAD/ePLAN y programación PLC en plataformas Siemens y Allen-Bradley.",
-      image: "/servicios/software-hardware.jpg",
+      image: "/servicios/software-hardware.webp",
       highlights: [
         { title: "AutoCAD & ePLAN", desc: "Diagramas eléctricos profesionales en plataformas líderes de la industria." },
         { title: "Siemens TIA Portal", desc: "Programación PLC para automatización de procesos industriales." },
@@ -77,7 +77,7 @@ export const data = {
       id: "RVD",
       name: "RVD Redes, Voz y Datos",
       description: "Diseño e instalación de infraestructura de redes industriales para comunicación entre dispositivos productivos.",
-      image: "/servicios/redes.jpg",
+      image: "/servicios/redes.webp",
       highlights: [
         { title: "Diseño de Red", desc: "Arquitectura y planificación de infraestructura de comunicaciones industriales." },
         { title: "Instalación", desc: "Fibra óptica, cableado ethernet estructurado y sistemas inalámbricos." },
@@ -89,7 +89,7 @@ export const data = {
       id: "SMG",
       name: "SMG Suministro de Materiales en General",
       description: "Materiales, equipos, refacciones e insumos de marcas líderes del sector industrial.",
-      image: "/servicios/suministro.jpg",
+      image: "/servicios/suministro.webp",
       highlights: [
         { title: "ABB · Siemens · Eaton", desc: "Equipos y componentes de automatización industrial." },
         { title: "Phoenix Contact · Weidmüller", desc: "Conectividad y protección para instalaciones eléctricas." },
@@ -100,26 +100,26 @@ export const data = {
   ],
 
   brands: [
-    { name: "Actassi", logo: "/proveedores/actassi.png" },
-    { name: "Allen-Bradley", logo: "/proveedores/ab.png" },
-    { name: "Phoenix Contact", logo: "/proveedores/phoenix.png" },
-    { name: "ABB", logo: "/proveedores/abb.png" },
-    { name: "Ascable-Recael", logo: "/proveedores/ascable.png" },
+    { name: "Actassi", logo: "/proveedores/actassi.webp" },
+    { name: "Allen-Bradley", logo: "/proveedores/ab.webp" },
+    { name: "Phoenix Contact", logo: "/proveedores/phoenix.webp" },
+    { name: "ABB", logo: "/proveedores/abb.webp" },
+    { name: "Ascable-Recael", logo: "/proveedores/ascable.webp" },
     { name: "Siemens", logo: "/proveedores/siemens.png" },
-    { name: "Eaton", logo: "/proveedores/eaton.png" },
-    { name: "Jupiter", logo: "/proveedores/jupiter.png" },
-    { name: "Orion", logo: "/proveedores/orion.png" },
-    { name: "Helukabel", logo: "/proveedores/helukabel.png" },
+    { name: "Eaton", logo: "/proveedores/eaton.webp" },
+    { name: "Jupiter", logo: "/proveedores/jupiter.webp" },
+    { name: "Orion", logo: "/proveedores/orion.webp" },
+    { name: "Helukabel", logo: "/proveedores/helukabel.webp" },
     { name: "Weidmüller", logo: "/proveedores/weidmuller.png" },
-    { name: "LAPP GROUP", logo: "/proveedores/lapp.png" },
-    { name: "Charofil", logo: "/proveedores/charofil.png" },
-    { name: "Viakon", logo: "/proveedores/viakon.png" }
+    { name: "LAPP GROUP", logo: "/proveedores/lapp.webp" },
+    { name: "Charofil", logo: "/proveedores/charofil.webp" },
+    { name: "Viakon", logo: "/proveedores/viakon.webp" }
   ],
 
   clients: [
-    { name: "Ford", logo: "/proveedores/ford.png" },
-    { name: "Tenneco", logo: "/proveedores/tenneco.png" },
-    { name: "Volkswagen", logo: "/proveedores/vwm.png" },
+    { name: "Ford", logo: "/proveedores/ford.webp" },
+    { name: "Tenneco", logo: "/proveedores/tenneco.webp" },
+    { name: "Volkswagen", logo: "/proveedores/vwm.webp" },
     { name: "Daimler", logo: "/proveedores/Daimler.svg" },
     { name: "Dürr AG", logo: "/proveedores/Dürr_AG_logo.svg.png" }
   ],

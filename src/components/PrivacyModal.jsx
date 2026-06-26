@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
 const PrivacyModal = ({ open, onClose }) => {
@@ -12,7 +12,7 @@ const PrivacyModal = ({ open, onClose }) => {
   return (
     <AnimatePresence>
       {open && (
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -21,7 +21,7 @@ const PrivacyModal = ({ open, onClose }) => {
           style={{ backgroundColor: 'rgba(0,0,0,0.7)' }}
           onClick={onClose}
         >
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 24 }}
@@ -160,8 +160,8 @@ const PrivacyModal = ({ open, onClose }) => {
                 Entendido
               </button>
             </div>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

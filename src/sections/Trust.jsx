@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { ShieldCheck, Gauge, TrendingUp, FileCheck } from 'lucide-react';
 
 const pillars = [
@@ -33,7 +33,7 @@ const Trust = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 lg:items-start">
           {/* Heading */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -52,12 +52,12 @@ const Trust = () => {
               continua. Integramos ingeniería eléctrica, automatización y robótica con un
               estándar técnico que las armadoras y fabricantes exigen.
             </p>
-          </motion.div>
+          </m.div>
 
           {/* Pillars */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/10">
             {pillars.map(({ icon: Icon, title, desc }, i) => (
-              <motion.div
+              <m.div
                 key={title}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ const Trust = () => {
                 </div>
                 <h3 className="text-white font-bold text-base mb-2">{title}</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">{desc}</p>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { data } from '../data/content';
 import SectionTitle from '../components/SectionTitle';
 
@@ -12,7 +12,7 @@ const Clients = () => {
         <div className="mt-16">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
             {data.clients.map((client, index) => (
-              <motion.div
+              <m.div
                 key={client.name}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -32,7 +32,7 @@ const Clients = () => {
                 <div style={{ display: 'none' }} className="h-full w-full items-center justify-center text-center">
                   <span className="text-slate-400 font-bold text-sm tracking-wide group-hover:text-primary-blue transition-colors">{client.name}</span>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>

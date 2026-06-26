@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Activity, ServerCog, Shield, Settings2, PencilRuler, Cpu, Factory } from 'lucide-react';
 import { data } from '../data/content';
 import Seo from '../components/Seo';
@@ -35,7 +35,7 @@ const ProjectsPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Page Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -47,7 +47,7 @@ const ProjectsPage = () => {
           <h1 className="text-4xl md:text-5xl font-black text-primary-blue leading-tight">
             Proyectos y Trayectoria
           </h1>
-          <motion.div
+          <m.div
             initial={{ width: 0 }}
             animate={{ width: '5rem' }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
@@ -56,7 +56,7 @@ const ProjectsPage = () => {
           <p className="text-slate-600 text-base mt-5 max-w-2xl leading-relaxed">
             Un historial comprobado de excelencia en ingeniería, ejecutando proyectos complejos para los líderes de la industria.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Proyecto Destacado - Modern Showcase */}
         <div className="mb-24">
@@ -136,7 +136,7 @@ const ProjectsPage = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary-blue to-blue-950 opacity-90" />
               
               <div className="relative z-10 w-32 h-32 md:w-40 md:h-40 bg-white rounded-full flex items-center justify-center shadow-2xl p-6 transform hover:scale-105 transition-transform duration-700">
-                <img src="/proveedores/vwm.png" alt="Volkswagen de México" className="w-full h-full object-contain" />
+                <img src="/proveedores/vwm.webp" alt="Volkswagen de México" className="w-full h-full object-contain" />
               </div>
               
               {/* Decorative rings */}
@@ -183,7 +183,7 @@ const ProjectsPage = () => {
                       const ProjectIcon = getProjectIcon(item.description, item.clientLocation);
                       const isEven = index % 2 === 0;
                       return (
-                      <motion.div
+                      <m.div
                         key={index}
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -213,7 +213,7 @@ const ProjectsPage = () => {
                             </p>
                           </div>
                         </div>
-                      </motion.div>
+                      </m.div>
                       );
                     })}
                   </div>
