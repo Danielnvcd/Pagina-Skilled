@@ -101,7 +101,7 @@ const Hero = () => {
               <div className="absolute -top-4 -right-4 w-32 h-32 border-t-2 border-r-2 border-accent-red" aria-hidden="true" />
               <div className="relative overflow-hidden rounded-sm border border-white/10 aspect-[4/5]">
                 <img
-                  src="/sectores/indus.webp"
+                  src="linea-de-produccion-de-automoviles-nuevos.jpg"
                   alt="Robot de aplicación de pintura conectado sobre una línea de carrocerías"
                   width="640"
                   height="800"
