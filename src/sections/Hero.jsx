@@ -11,6 +11,20 @@ const AREAS = [
   'Suministro',
 ];
 
+/* Alto óptico de cada logo de la banda de credenciales. Un alto único deja los
+   wordmarks largos (Daimler) como una línea y los emblemas redondos (VW, BMW)
+   dominando la fila, así que se compensa por forma: emblema ≈ 26px y el
+   wordmark baja de alto conforme se alarga. Los archivos de /proveedores están
+   recortados a la tinta, así que estos valores son el tamaño real en pantalla. */
+const LOGO_HEIGHT = {
+  Ford: 'h-[22px]',
+  Tenneco: 'h-5',
+  Volkswagen: 'h-[26px]',
+  Daimler: 'h-[15px]',
+  'Dürr AG': 'h-[22px]',
+  BMW: 'h-[26px]',
+};
+
 // Aparición escalonada de los bloques de la columna de texto.
 const rise = {
   hidden: { opacity: 0, y: 24 },
@@ -18,8 +32,12 @@ const rise = {
 };
 
 const Hero = () => {
+  // svh, no dvh: dvh crece cuando Safari en iOS repliega su barra inferior, y al
+  // volver a desplegarla la banda de credenciales queda debajo de ella. svh es el
+  // viewport con toda la barra visible, así que la banda siempre cae dentro del
+  // área que se ve.
   return (
-    <section className="relative flex flex-col min-h-screen !min-h-[100dvh] overflow-hidden bg-[#041527] pt-24">
+    <section className="relative flex flex-col min-h-screen !min-h-[100svh] overflow-hidden bg-[#041527] pt-24">
       <div className="flex-grow flex items-center w-full relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -124,23 +142,29 @@ const Hero = () => {
         transition={{ duration: 0.6, delay: 0.7 }}
         className="relative z-10 border-t border-white/10 mt-10"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {/* El padding inferior extra evita que los logos queden pegados al borde
+            del viewport, donde los tapa la barra del navegador; el env() cubre
+            además el indicador de inicio del iPhone. */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-[max(2.5rem,calc(1.5rem+env(safe-area-inset-bottom)))]">
           <div className="flex flex-wrap items-center justify-center lg:justify-between gap-x-8 gap-y-5">
             <span className="text-[10px] font-black uppercase tracking-[0.22em] text-slate-400 whitespace-nowrap">
               Han confiado en nosotros
             </span>
             <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
               {data.clients.map((client) => (
-                <img
-                  key={client.name}
-                  src={client.logo}
-                  alt={client.name}
-                  title={client.name}
-                  loading="lazy"
-                  /* brightness-0 + invert deja cada logo en silueta blanca, sin
-                     importar el color original del archivo. */
-                  className="h-7 w-20 object-contain brightness-0 invert opacity-50 hover:opacity-90 transition-opacity duration-300"
-                />
+                /* Caja de alto fijo: alinea todos los logos sobre la misma línea
+                   base aunque cada uno tenga su propio alto óptico. */
+                <span key={client.name} className="flex h-8 items-center justify-center">
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    title={client.name}
+                    loading="lazy"
+                    /* brightness-0 + invert deja cada logo en silueta blanca, sin
+                       importar el color original del archivo. */
+                    className={`${LOGO_HEIGHT[client.name] ?? 'h-[22px]'} w-auto max-w-[120px] object-contain brightness-0 invert opacity-50 hover:opacity-90 transition-opacity duration-300`}
+                  />
+                </span>
               ))}
             </div>
           </div>
