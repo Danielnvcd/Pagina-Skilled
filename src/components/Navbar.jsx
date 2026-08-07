@@ -51,7 +51,7 @@ const Navbar = () => {
         scrolled ? 'bg-white border-b border-slate-200 py-3' : 'bg-white py-3'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-14 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0 cursor-pointer" onClick={() => window.scrollTo(0,0)}>
           <img 
