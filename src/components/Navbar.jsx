@@ -40,7 +40,6 @@ const Navbar = () => {
     { name: 'Historia', href: '/historia' },
     { name: 'Servicios', href: '/servicios' },
     { name: 'Proveedores', href: '/proveedores' },
-    { name: 'Clientes', href: '/#clientes' },
   ];
 
   return (

@@ -1,24 +1,25 @@
 import { m } from 'framer-motion';
-import { PlugZap, Workflow, CircuitBoard, Cpu, Network, Boxes, Medal, ChevronRight } from 'lucide-react';
+import { Medal, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { data } from '../data/content';
 
-// Icono por id de servicio para que coincida con su contenido.
-const ICONS = {
-  SIE: PlugZap,        // Infraestructura Eléctrica
-  IPS: Workflow,       // Integración / proyectos llave en mano (pipeline)
-  SIE_ING: CircuitBoard, // Ingeniería Eléctrica (tableros, tensión)
-  SISH: Cpu,           // Ingeniería SW/HW (PLC, programación)
-  RVD: Network,        // Redes, Voz y Datos
-  SMG: Boxes,          // Suministro de materiales
+// Todas las cards muestran 3 items para que las listas queden simétricas.
+const ITEM_COUNT = 3;
+
+// El pipeline se agrupa por pares para caber en las 3 filas sin perder etapas.
+const pairPipeline = (stages) => {
+  const pairs = [];
+  for (let i = 0; i < stages.length; i += 2) {
+    pairs.push({ title: stages.slice(i, i + 2).join(' → '), desc: null });
+  }
+  return pairs;
 };
 
 const ServiceCard = ({ service }) => {
-  const Icon = ICONS[service.id] || PlugZap;
   const items = service.highlights
-    ? service.highlights.slice(0, 3)
+    ? service.highlights.slice(0, ITEM_COUNT)
     : service.pipeline
-    ? service.pipeline.slice(0, 4).map((s) => ({ title: s, desc: null }))
+    ? pairPipeline(service.pipeline).slice(0, ITEM_COUNT)
     : [];
 
   return (
@@ -46,18 +47,13 @@ const ServiceCard = ({ service }) => {
       {/* Body container */}
       <div className="relative flex flex-col flex-1 p-5 sm:p-8 bg-white">
         
-        {/* Title & Icon */}
-        <div className="flex items-center gap-4 mb-4">
-          <div className="w-10 h-10 bg-slate-50 border border-slate-200 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:bg-primary-blue group-hover:border-primary-blue transition-colors duration-300">
-             <Icon size={20} className="text-primary-blue group-hover:text-white transition-colors duration-300" />
-          </div>
-          <h3 className="text-lg font-bold text-slate-900 leading-tight group-hover:text-primary-blue transition-colors duration-200">
-            {service.name.replace(/^[A-Z_]+ /, '')}
-          </h3>
-        </div>
+        {/* Title — alto fijo de 2 líneas para alinear todas las cards */}
+        <h3 className="text-lg font-bold text-slate-900 leading-tight mb-4 min-h-[2.8rem] line-clamp-2 group-hover:text-primary-blue transition-colors duration-200">
+          {service.name.replace(/^[A-Z_]+ /, '')}
+        </h3>
 
-        {/* Description */}
-        <p className="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">
+        {/* Description — alto fijo de 3 líneas */}
+        <p className="text-sm text-slate-600 leading-relaxed mb-6 min-h-[4.3rem] line-clamp-3">
           {service.description}
         </p>
 
@@ -66,11 +62,11 @@ const ServiceCard = ({ service }) => {
           <div className="mb-6 border-t border-slate-100 pt-5">
             <ul className="space-y-3">
               {items.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
+                <li key={i} className="flex items-start gap-3 min-h-[3.7rem]">
                   <div className="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary-blue" />
                   </div>
-                  <span className="text-sm text-slate-700 leading-snug">
+                  <span className="text-sm text-slate-700 leading-snug line-clamp-3">
                     <span className="font-semibold">{item.title}</span>
                     {item.desc && (
                       <span className="font-normal text-slate-500"> — {item.desc}</span>
@@ -84,7 +80,7 @@ const ServiceCard = ({ service }) => {
 
         {/* Certification badge */}
         {service.certification && (
-          <div className="mb-6 flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-sm px-4 py-3">
+          <div className="mt-auto mb-6 flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-sm px-4 py-3">
             <Medal size={18} className="text-primary-blue flex-shrink-0" />
             <div>
               <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 leading-none mb-1">Certificación</p>

@@ -43,20 +43,17 @@ const Brands = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="bg-white border border-slate-200 rounded-sm p-6 text-center hover:border-primary-blue transition-colors duration-300 group"
             >
-              <h3 className="text-sm font-bold text-slate-900 mb-4">{cat.label}</h3>
-              <div className="flex flex-wrap items-center justify-center gap-2">
+              {/* Alto fijo de 2 líneas: alinea la fila de logos entre todas las categorías */}
+              <h3 className="text-sm font-bold text-slate-900 mb-4 min-h-[2.6rem]">{cat.label}</h3>
+              <div className="flex items-center justify-center gap-3 h-14">
                 {cat.logos.map((logo) => (
-                  <div
+                  <img
                     key={logo.name}
-                    className="w-16 h-16 md:w-14 md:h-14 bg-white border border-slate-200 rounded-sm flex items-center justify-center p-1.5"
-                  >
-                    <img
-                      src={logo.src}
-                      alt={logo.name}
-                      title={logo.name}
-                      className="max-w-full max-h-full object-contain"
-                    />
-                  </div>
+                    src={logo.src}
+                    alt={logo.name}
+                    title={logo.name}
+                    className="h-12 w-16 shrink-0 object-contain"
+                  />
                 ))}
               </div>
             </m.div>
